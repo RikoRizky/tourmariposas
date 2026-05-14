@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://rikorizky.github.io/mariposas",
+  "homepage": "https://rikorizky.github.io/tourmariposas",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
