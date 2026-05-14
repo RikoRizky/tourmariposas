@@ -1,0 +1,227 @@
+/* --- CSS MARIPOSA (dari index.html, urutan setelah style.css) --- */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #0088cc;
+  --black: #242424;
+  --white: #f5f5f5;
+  --pill: #e0d4be;
+  --red: #cc033f;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 8em 5em 2em 5em;
+  background-color: var(--white);
+  background-image: url("https://www.transparenttextures.com/patterns/church.png");
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  -webkit-overflow-scrolling: touch;
+}
+
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+}
+
+.svg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .svg-container svg {
+    width: 100%;
+    height: auto;
+    transform: scale(2.5);
+    transform-origin: center;
+  }
+  .text-name {
+    font-size: 45px !important;
+  }
+  .text-title {
+    font-size: 30px !important;
+    letter-spacing: 12px !important;
+  }
+}
+
+.animated-content {
+  transform-origin: 960px 540px;
+  animation: cinematicReveal 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+.line-anim {
+  opacity: 0;
+  animation: growLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.5s;
+}
+.text-slide-anim {
+  opacity: 0;
+  animation: slideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.8s;
+}
+.text-name {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 72px;
+  fill: var(--text-color);
+}
+.text-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 16px;
+  fill: var(--accent-color);
+}
+
+@keyframes cinematicReveal {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+@keyframes growLine {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: center;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+    transform-origin: center;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.flash-overlay {
+  fill: #ffffff;
+  animation: fadeOutFlash 1.5s ease-out forwards;
+}
+@keyframes fadeOutFlash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.flow {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #1c1c1c;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 9998;
+}
+.flow-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+}
+.flow .img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 350px;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 1024px) {
+  .flow .img {
+    width: 400px;
+    height: 280px;
+  }
+}
+@media (max-width: 600px) {
+  .flow .img {
+    width: 280px;
+    height: 200px;
+  }
+}
+
+.flow .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.flow .img.cover {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 50;
+}
+.flow .img.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
+.section-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Instrument Serif", serif;
+  width: 90%;
+  pointer-events: none;
+}
+.section-text p {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  letter-spacing: 0.2em;
+  opacity: 0;
+}

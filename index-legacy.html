@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariposas Tour</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+  <style>
+    /* --- CSS MARIPOSA (UTUH) --- */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #0088cc;
+      --black: #242424;
+      --white: #f5f5f5;
+      --pill: #e0d4be;
+      --red: #cc033f;
+    }
+
+   /* Cari bagian ini di style Anda */
+body, html {
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
+  background-color: #1c1c1c;
+  /* overflow: hidden;  <-- HAPUS ATAU KOMENTARI BARIS INI */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Tambahkan/Ubah aturan untuk section menu agar bisa di-scroll */
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%; /* Pastikan lebar penuh */
+  min-height: 100vh;
+  max-height: 100vh; /* Batasi tinggi maksimal seukuran layar */
+  overflow-y: auto;  /* AKTIFKAN SCROLL VERTIKAL */
+  padding: 8em 5em 2em 5em;
+  background-color: var(--white);
+  background-image: url("https://www.transparenttextures.com/patterns/church.png");
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  -webkit-overflow-scrolling: touch; /* Opsional: agar scroll halus di iOS */
+}
+
+    .wrapper {
+      position: fixed; inset: 0; z-index: 99999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: var(--bg-color);
+    }
+
+    .svg-container { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+
+    @media (max-width: 768px) {
+      .svg-container svg { width: 100%; height: auto; transform: scale(2.5); transform-origin: center; }
+      .text-name { font-size: 45px !important; }
+      .text-title { font-size: 30px !important; letter-spacing: 12px !important; }
+    }
+
+    .animated-content { transform-origin: 960px 540px; animation: cinematicReveal 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+    .line-anim { opacity: 0; animation: growLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: 0.5s; }
+    .text-slide-anim { opacity: 0; animation: slideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: 0.8s; }
+    .text-name { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 72px; fill: var(--text-color); }
+    .text-title { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 24px; letter-spacing: 16px; fill: var(--accent-color); }
+
+    @keyframes cinematicReveal { 0% { transform: scale(1.5); opacity: 0; filter: blur(20px); } 100% { transform: scale(1); opacity: 1; filter: blur(0px); } }
+    @keyframes growLine { 0% { transform: scaleY(0); opacity: 0; transform-origin: center; } 100% { transform: scaleY(1); opacity: 1; transform-origin: center; } }
+    @keyframes slideRight { 0% { transform: translateX(-50px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+    .flash-overlay { fill: #ffffff; animation: fadeOutFlash 1.5s ease-out forwards; }
+    @keyframes fadeOutFlash { 0% { opacity: 1; } 100% { opacity: 0; pointer-events: none; } }
+
+    .flow { height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; background: #1c1c1c; overflow: hidden; visibility: hidden; z-index: 9998; }
+    .flow-images { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform-style: preserve-3d; perspective: 2000px; }
+    .flow .img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 350px; will-change: transform, opacity; }
+
+    @media (max-width: 1024px) { .flow .img { width: 400px; height: 280px; } }
+    @media (max-width: 600px) { .flow .img { width: 280px; height: 200px; } }
+
+    .flow .img img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+    .flow .img.cover { width: 100% !important; height: 100% !important; z-index: 50; }
+    .flow .img.cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3)); }
+
+    .section-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100; text-align: center; color: #ffffff; font-family: 'Instrument Serif', serif; width: 90%; pointer-events: none; }
+    .section-text p { font-size: clamp(1.5rem, 5vw, 2.5rem); letter-spacing: 0.2em; opacity: 0; }
+
+    /* CSS LANDING PAGE CPC TELAH DIHAPUS DARI INTERNAL STYLE INI */
+  </style>
+  
+  <link rel="stylesheet" href="style-cpc.css">
+</head>
+
+<body>
+
+  <div id="preloader" class="wrapper">
+    <div class="svg-container">
+      <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <clipPath id="reveal-mask"><rect x="940" y="200" width="1000" height="700" /></clipPath>
+        </defs>
+        <rect width="1920" height="1080" fill="#ffffff" />
+        <g class="animated-content">
+          <image href="logobg.png" x="520" y="340" width="450" height="400" preserveAspectRatio="xMidYMid meet" />
+          <line class="line-anim" x1="960" y1="440" x2="960" y2="620" stroke="#111111" stroke-width="3" />
+          <g clip-path="url(#reveal-mask)">
+            <g transform="translate(1000, 530)">
+              <g class="text-slide-anim">
+                <text class="text-name" x="0" y="10">Mariposas Tour</text>
+                <text class="text-title" x="5" y="65">Indonesia</text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <rect class="flash-overlay" width="1920" height="1080" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="section-text"><p>EXPLORE THE BEAUTY</p></div>
+    <div class="flow-images">
+      <div class="img"><img src="https://i.pinimg.com/1200x/6d/c1/51/6dc151fccad84848851615bf7fd5273e.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/736x/86/5b/37/865b37c273ce08ccba905cfd5c43f7fd.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/8d/ff/a1/8dffa167d7c06c98303cf74e1e684c0c.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/7a/9d/b3/7a9db3f4a8c14244c9799897c5b27e15.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/92/6a/f6/926af63e63524d0b2b5d4d29f8c2960f.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/736x/3c/fd/40/3cfd40d9da71424ccfdb4a4f23d24b15.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/736x/b3/a9/ea/b3a9eacf0a48d73daf7a9d99a641358d.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/ea/7d/64/ea7d6422e60fd7d08a2f57e7a81f8db5.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/df/e4/3e/dfe43e45689d1c604a3bdadc10ff6400.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/83/a0/61/83a0611b7dffe9a845b371161da4a6ca.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/736x/3b/30/71/3b30719fcf57e0fb4e4c7875c123be89.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/e6/9e/b6/e69eb622ea968f2d107bc5bce20aab71.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/b8/f8/a0/b8f8a07bb42de63c8a03c136457535d4.jpg"></div>
+      <div class="img"><img src="https://i.pinimg.com/1200x/ce/8d/c9/ce8dc976c68aae6e5b6bf13f0b563de7.jpg"></div>
+      <div class="img cover"><img src="https://i.pinimg.com/1200x/a2/00/3f/a2003f95fde2cf6615a484ce3e43b33f.jpg"></div>
+    </div>
+  </div>
+
+  <div id="landing-page-content">
+    <div class="page-wrap">
+  <header class="page-header">
+
+    <nav>
+      <h1>Mariposas Tour</h1>
+      <ul>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <article id="hero-1" style="--i: 5">
+        <div class="hero-info">
+          <h2>Travel the</h2>
+          <h1>World</h1>
+          <h3>Pragser Wildsee, Italy</h3>
+        </div>
+        <div class="hero-image hi-1"></div>
+      </article>
+
+      <article id="hero-2" style="--i: 4">
+        <div class="hero-info">
+          <h2>Savour the</h2>
+          <h1>Journey</h1>
+          <h3>Marignier, France</h3>
+        </div>
+        <div class="hero-image hi-2"></div>
+
+      </article>
+
+      <article id="hero-3" style="--i: 3">
+        <div class="hero-info">
+          <h2>Expand Your</h2>
+          <h1>Horizons</h1>
+          <h3>Hooker Valley Track, New Zealand</h3>
+        </div>
+        <div class="hero-image hi-3"></div>
+
+      </article>
+
+      <article id="hero-4" style="--i: 2">
+        <div class="hero-info">
+          <h2>Explore and</h2>
+          <h1>Reflect</h1>
+          <h3>Dolmites, Italy</h3>
+        </div>
+        <div class="hero-image hi-4"></div>
+
+      </article>
+
+      <article id="hero-5" style="--i: 1">
+        <div class="hero-info">
+          <h2>Change Your</h2>
+          <h1>Perspective</h1>
+          <h3>Phuket, Thailand</h3>
+        </div>
+        <div class="hero-image hi-5"></div>
+      </article>
+    </main>
+
+  </header>
+
+  <section>
+    <ul class="level-1">
+      <li>
+        <h3>Destinations</h3>
+        <ul class="level-2">
+          <li>
+            <p>Asia</p>
+            <ul class="level-3">
+              <li>Bali</li>
+              <li>Cambodia</li>
+              <li>Georgia</li>
+              <li>India</li>
+              <li>Indonesia</li>
+              <li>Laos</li>
+              <li>Malaysia</li>
+              <li>Maldives</li>
+              <li>Myanmar</li>
+              <li>Philippines</li>
+              <li>Singapore</li>
+              <li>Sri Lanka</li>
+              <li>Thailand</li>
+              <li>Uzbekistan</li>
+              <li>Vietnam</li>
+            </ul>
+          </li>
+          <li>
+            <p>Europe</p>
+            <ul class="level-3">
+              <li>Czech Republic</li>
+              <li>France</li>
+              <li>Georgia</li>
+              <li>Greece</li>
+              <li>Hungary</li>
+              <li>Iceland</li>
+              <li>Italy</li>
+              <li>Malta</li>
+              <li>Netherlands</li>
+              <li>Poland</li>
+              <li>Portugal</li>
+              <li>Spain</li>
+              <li>Turkey</li>
+            </ul>
+          </li>
+          <li>
+            <p>Africa</p>
+            <ul class="level-3">
+              <li>Egypt</li>
+              <li>Maurtius</li>
+              <li>Morocco</li>
+            </ul>
+          </li>
+          <li>
+            <p>Middle East</p>
+            <ul class="level-3">
+              <li>Egypt</li>
+              <li>Jordan</li>
+              <li>Oman</li>
+              <li>Turkey</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Travel Tips</h3>
+        <ul>
+          <li>Going on a trip</li>
+          <li>Travel Insurance</li>
+          <li>Working abroad</li>
+          <li>Saving</li>
+          <li>Instagram tips</li>
+        </ul>
+        <p><small>More tips...</small></p>
+      </li>
+      <li>
+        <h3>Resources</h3>
+        <ul>
+          <li>Personalised travel advice</li>
+          <li>Where we book our travels</li>
+          <li>Become a booking agent</li>
+        </ul>
+        <p><small>More resources...</small></p>
+      </li>
+      <li>
+        <h3>About Us</h3>
+        <ul>
+          <li>Our story</li>
+          <li>Work with us</li>
+          <li>Instagram</li>
+          <li>YouTube</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+    </div>
+  </div>
+
+  <script src="script-cpc.js"></script>
+
+  <script>
+    window.addEventListener("load", () => {
+      const master = gsap.timeline();
+
+      // --- 1. ANIMASI PRELOADER (MARIPOSA) ---
+      master.to("#preloader", {
+        opacity: 0,
+        duration: 1,
+        delay: 2.8,
+        ease: "power2.inOut",
+        onComplete: () => {
+          document.getElementById("preloader").style.display = "none";
+        }
+      });
+
+      // --- 2. SETUP FLOW ANIMATION (MARIPOSA) ---
+      const images = gsap.utils.toArray('.flow .img');
+      const positions = [
+        { x: -0.8, y: -0.6 }, { x: 0.7, y: 0.4 }, { x: -0.5, y: 0.7 },
+        { x: 0.6, y: -0.5 }, { x: -0.8, y: 0.2 }, { x: 0.8, y: -0.3 },
+        { x: -0.6, y: -0.8 }, { x: 0.4, y: 0.6 }, { x: -0.7, y: 0.5 },
+        { x: 0.5, y: -0.7 }, { x: -0.4, y: -0.4 }, { x: 0.3, y: 0.8 },
+        { x: -0.8, y: 0.3 }, { x: 0.6, y: 0.2 }, { x: -0.2, y: -0.7 },
+        { x: 0.7, y: -0.6 }, { x: -0.5, y: 0.4 }, { x: 0.4, y: -0.4 },
+        { x: -0.6, y: 0.6 }, { x: 0.8, y: 0.5 }, { x: -0.3, y: -0.5 },
+        { x: 0.5, y: 0.3 }, { x: -0.7, y: -0.2 }, { x: 0.2, y: 0.7 },
+        { x: -0.4, y: 0.8 }, { x: 0.6, y: -0.8 }, { x: -0.8, y: 0.1 },
+        { x: 0, y: 0 }
+      ];
+
+      gsap.set(".flow", { visibility: "visible" });
+      gsap.set(images, { xPercent: -50, yPercent: -50, z: -5000, opacity: 0, scale: 0 });
+
+      const flowTl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+
+      flowTl.to(".flow .section-text p", { opacity: 1, duration: 1.2 })
+            .to(".flow .section-text", { opacity: 0, duration: 0.8, delay: 0.5 });
+
+      images.forEach((img, index) => { 
+        const isLast = index === images.length - 1; 
+        flowTl.to(img, { 
+            xPercent: isLast ? -50 : (positions[index].x * 150), 
+            yPercent: isLast ? -50 : (positions[index].y * 150),
+            x: 0, y: 0,
+            z: isLast ? 0 : 3500, 
+            opacity: 1, scale: 1, duration: 1.2 
+        }, ">-1.05"); 
+      });
+
+      // --- 3. TRANSISI SINEMATIK KE LANDING PAGE ---
+      flowTl.to(".flow .img.cover img", {
+        scale: 1.4, duration: 1.8, filter: "blur(10px)", ease: "power2.in"
+      }, "-=0.2");
+
+      flowTl.to("#landing-page-content", {
+        visibility: "visible", opacity: 1, scale: 1, duration: 1.2, ease: "expo.out",
+        startAt: { scale: 1.1, opacity: 0 },
+        onStart: () => {
+          gsap.from("#landing-nav", { y: -80, opacity: 0, duration: 1.5, ease: "expo.out" });
+          gsap.from(".hero-reveal", { y: 120, opacity: 0, duration: 1.8, stagger: 0.15, ease: "expo.out" });
+          
+          // Memanggil fungsi dari script-cpc.js
+          if (typeof initLandingSlider === "function") {
+            initLandingSlider();
+          }
+        }
+      }, "-=1.2");
+
+      flowTl.to(".flow", { display: "none" });
+      master.add(flowTl);
+    });
+  </script>
+<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
