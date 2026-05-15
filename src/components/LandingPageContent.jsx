@@ -208,58 +208,11 @@ export function LandingPageContent() {
               <h3>Destinations</h3>
               <ul className="level-2">
                 <li>
-                  <p>Asia</p>
+                  {/* <p>Asia</p> */}
                   <ul className="level-3">
                     <li>Bali</li>
                     <li>Cambodia</li>
-                    <li>Georgia</li>
-                    <li>India</li>
-                    <li>Indonesia</li>
-                    <li>Laos</li>
-                    <li>Malaysia</li>
-                    <li>Maldives</li>
-                    <li>Myanmar</li>
-                    <li>Philippines</li>
-                    <li>Singapore</li>
-                    <li>Sri Lanka</li>
-                    <li>Thailand</li>
-                    <li>Uzbekistan</li>
-                    <li>Vietnam</li>
-                  </ul>
-                </li>
-                <li>
-                  <p>Europe</p>
-                  <ul className="level-3">
-                    <li>Czech Republic</li>
-                    <li>France</li>
-                    <li>Georgia</li>
-                    <li>Greece</li>
-                    <li>Hungary</li>
-                    <li>Iceland</li>
-                    <li>Italy</li>
-                    <li>Malta</li>
-                    <li>Netherlands</li>
-                    <li>Poland</li>
-                    <li>Portugal</li>
-                    <li>Spain</li>
-                    <li>Turkey</li>
-                  </ul>
-                </li>
-                <li>
-                  <p>Africa</p>
-                  <ul className="level-3">
-                    <li>Egypt</li>
-                    <li>Maurtius</li>
-                    <li>Morocco</li>
-                  </ul>
-                </li>
-                <li>
-                  <p>Middle East</p>
-                  <ul className="level-3">
-                    <li>Egypt</li>
-                    <li>Jordan</li>
-                    <li>Oman</li>
-                    <li>Turkey</li>
+                    <li>Japan</li>
                   </ul>
                 </li>
               </ul>
