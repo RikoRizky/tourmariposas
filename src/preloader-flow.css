@@ -1,4 +1,5 @@
-/* --- CSS MARIPOSA (dari index.html, urutan setelah style.css) --- */
+/* --- CSS MARIPOSA FIXED --- */
+
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
@@ -19,85 +20,127 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
+/* ================= SECTION OVERLAY FIX ================= */
+
 section {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  inset: 0;
+
   z-index: 9;
+
   width: 100%;
+
   min-height: 100vh;
-  max-height: 100vh;
+
   overflow-y: auto;
-  padding: 8em 5em 2em 5em;
+
+  padding: 8em 5em 100px 5em;
+
   background-color: var(--white);
   background-image: url("https://www.transparenttextures.com/patterns/church.png");
+
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+  pointer-events: auto;
+
+  display: none;
+
   -webkit-overflow-scrolling: touch;
 }
+
+/* ================= WRAPPER ================= */
 
 .wrapper {
   position: fixed;
   inset: 0;
   z-index: 99999;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   background: var(--bg-color);
 }
 
 .svg-container {
   width: 100%;
   height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* ================= MOBILE SVG ================= */
+
 @media (max-width: 768px) {
   .svg-container svg {
     width: 100%;
     height: auto;
+
     transform: scale(2.5);
     transform-origin: center;
   }
+
   .text-name {
     font-size: 45px !important;
   }
+
   .text-title {
     font-size: 30px !important;
     letter-spacing: 12px !important;
   }
 }
 
+/* ================= ANIMATION ================= */
+
 .animated-content {
   transform-origin: 960px 540px;
-  animation: cinematicReveal 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  animation: cinematicReveal 2.2s
+    cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
   opacity: 0;
 }
+
 .line-anim {
   opacity: 0;
-  animation: growLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  animation: growLine 0.7s
+    cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
   animation-delay: 0.5s;
 }
+
 .text-slide-anim {
   opacity: 0;
-  animation: slideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  animation: slideRight 1.2s
+    cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
   animation-delay: 0.8s;
 }
+
 .text-name {
   font-family: "Raleway", sans-serif;
   font-weight: 900;
   font-size: 72px;
+
   fill: var(--text-color);
 }
+
 .text-title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 24px;
+
   letter-spacing: 16px;
+
   fill: var(--accent-color);
 }
+
+/* ================= KEYFRAMES ================= */
 
 @keyframes cinematicReveal {
   0% {
@@ -105,75 +148,96 @@ section {
     opacity: 0;
     filter: blur(20px);
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
     filter: blur(0px);
   }
 }
+
 @keyframes growLine {
   0% {
     transform: scaleY(0);
     opacity: 0;
     transform-origin: center;
   }
+
   100% {
     transform: scaleY(1);
     opacity: 1;
     transform-origin: center;
   }
 }
+
 @keyframes slideRight {
   0% {
     transform: translateX(-50px);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
+
 .flash-overlay {
   fill: #ffffff;
   animation: fadeOutFlash 1.5s ease-out forwards;
 }
+
 @keyframes fadeOutFlash {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     pointer-events: none;
   }
 }
 
+/* ================= FLOW ================= */
+
 .flow {
   height: 100vh;
   width: 100vw;
+
   position: fixed;
   top: 0;
   left: 0;
+
   background: #1c1c1c;
+
   overflow: hidden;
   visibility: hidden;
+
   z-index: 9998;
 }
+
 .flow-images {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+
   width: 100%;
   height: 100%;
+
   transform-style: preserve-3d;
   perspective: 2000px;
 }
+
 .flow .img {
   position: absolute;
+
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
+
   width: 500px;
   height: 350px;
+
   will-change: transform, opacity;
 }
 
@@ -183,6 +247,7 @@ section {
     height: 280px;
   }
 }
+
 @media (max-width: 600px) {
   .flow .img {
     width: 280px;
@@ -193,35 +258,274 @@ section {
 .flow .img img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   border-radius: 4px;
 }
+
 .flow .img.cover {
   width: 100% !important;
   height: 100% !important;
+
   z-index: 50;
 }
+
 .flow .img.cover::after {
   content: "";
+
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.3)
+  );
 }
+
+/* ================= TEXT ================= */
 
 .section-text {
   position: absolute;
+
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
+
   z-index: 100;
+
   text-align: center;
   color: #ffffff;
+
   font-family: "Instrument Serif", serif;
+
   width: 90%;
+
   pointer-events: none;
 }
+
 .section-text p {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   letter-spacing: 0.2em;
+
   opacity: 0;
+}
+
+/* ================= CARDS FIX ================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+
+  margin-top: 50px;
+
+  position: relative;
+  z-index: 100000;
+}
+
+.card {
+  background: white;
+
+  border-radius: 25px;
+  overflow: hidden;
+
+  border: 1px solid #eee;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-image img {
+  width: 100%;
+  height: 260px;
+
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+.details p {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.bottom-row button {
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: #0c4da2;
+  color: white;
+
+  cursor: pointer;
+}
+
+/* ================= DESTINATION BUTTON FIX ================= */
+
+.level-3 li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.level-3 li:hover {
+  background: white;
+  color: white;
+}
+
+.level-3 button {
+  all: unset;
+
+  cursor: pointer;
+
+  width: 100%;
+  display: block;
+
+  padding: 8px 12px;
+}
+
+.level-3 button:hover {
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 6em 2em 2em 2em;
+  }
+}
+
+nav {
+  position: relative;
+  z-index: 100000;
+}
+
+#burger {
+  position: relative;
+  z-index: 100001;
+}
+
+nav {
+  background: white;
+}
+
+nav h1 {
+  color: black;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 32px;
+
+  background: white;   /* bg merah hilang jadi putih */
+}
+
+/* LOGO + TEXT */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-brand img {
+  width: 90px;   /* diperkecil */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Garis pemisah */
+.brand-divider {
+  width: 2px;
+  height: 45px;
+  background: #111;
+}
+
+/* Tulisan utama */
+.brand-text h1 {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;   /* lebih normal */
+  font-weight: 700;
+  line-height: 1;
+  background: #ffffff;
+
+  color: #000;
+  margin-left: -12px;
+}
+
+/* Indonesia */
+.brand-text p {
+  margin: 0;
+  margin-top: 4px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 6px;
+  color: #2da7ff;
+}
+
+#landing-page-content section {
+  background: #111 !important;
+  min-height: 100vh !important;
+  height: auto !important;
+}
+
+.page-wrap {
+  background: #111;
+}
+
+.page-header {
+  background: #111;
+}
+
+#landing-page-content section {
+  background: #111 !important;
+}
+
+.page-wrap {
+  background: #111;
 }
