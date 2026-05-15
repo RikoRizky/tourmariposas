@@ -190,31 +190,51 @@ export function LandingPageContent() {
     <div id="landing-page-content" ref={landingRef}>
       <div className="page-wrap">
         <header className="page-header">
-          <nav>
-  <div className="nav-brand">
-    <img
-      src={`${import.meta.env.BASE_URL}logobg.png`}
-      alt="Mariposas Logo"
-    />
+          <nav className="modern-navbar">
 
-    <div className="brand-divider"></div>
+  <div className="nav-left">
 
-    <div className="brand-text">
-      <h1>Mariposas Tour</h1>
-      <p>Indonesia</p>
+    <div className="nav-brand">
+      <img
+        src={`${import.meta.env.BASE_URL}logobg.png`}
+        alt="Mariposas Logo"
+      />
+
+      <div className="brand-divider"></div>
+
+      <div className="brand-text">
+        <h1>Mariposas Tour</h1>
+        <p>Indonesia</p>
+      </div>
     </div>
+
   </div>
 
-  <ul>
-    <li>About Us</li>
-    <li>Contact Us</li>
+  <div className="nav-center">
+    <a href="#">Discover</a>
+    <a href="#">Experience</a>
+    <a href="#">Destination</a>
+    <a href="#">Information</a>
+  </div>
 
-    <li ref={burgerRef} id="burger">
+  <div className="nav-right">
+
+    <button className="currency-btn">
+      USD
+    </button>
+
+    <button className="booking-btn">
+      My Booking
+    </button>
+
+    <div ref={burgerRef} id="burger">
       <span></span>
       <span></span>
       <span></span>
-    </li>
-  </ul>
+    </div>
+
+  </div>
+
 </nav>
 
           <main>
@@ -271,137 +291,162 @@ export function LandingPageContent() {
         </header>
 
         <section
-          ref={overlayRef}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100vh",
-            background: "#111",
-            overflowY: "auto",
-            zIndex: 999,
-            padding: "40px",
-          }}
+  ref={overlayRef}
+  className="menu-overlay"
+>
+
+  <div className="menu-container">
+
+    <div className="menu-left">
+
+      <p className="menu-label">
+        EXPLORE WORLD
+      </p>
+
+      <h1>
+        Choose Your
+        <br />
+        Destination
+      </h1>
+
+      <p className="menu-desc">
+        Discover beautiful places around the world
+        with premium travel experiences.
+      </p>
+
+    </div>
+
+    <div className="menu-right">
+
+      <div className="destination-grid">
+
+        <button
+          type="button"
+          onClick={() =>
+            setSelectedDestination("Bali")
+          }
         >
-          <ul className="level-1">
-            <li>
-              <h3>Destinations</h3>
+          🇮🇩 Indonesia
+        </button>
 
-              <ul className="level-2">
-                <li>
-                  <p>Asia</p>
+        <button
+          type="button"
+          onClick={() =>
+            setSelectedDestination("Thailand")
+          }
+        >
+          🇹🇭 Thailand
+        </button>
 
-                  <ul className="level-3">
-                    <li>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setSelectedDestination("Bali")
-                        }
-                      >
-                        Indonesia
-                      </button>
-                    </li>
+        <button
+          type="button"
+          onClick={() =>
+            setSelectedDestination("Japan")
+          }
+        >
+          🇯🇵 Japan
+        </button>
 
-                    <li>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setSelectedDestination("Thailand")
-                        }
-                      >
-                        Turki
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setSelectedDestination("Bali")
-                        }
-                      >
-                        Indonesia
-                      </button>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <button
+          type="button"
+          onClick={() =>
+            setSelectedDestination("Swiss")
+          }
+        >
+          🇨🇭 Switzerland
+        </button>
+
+        <button
+          type="button"
+          onClick={() =>
+            setSelectedDestination("Turkey")
+          }
+        >
+          🇹🇷 Turkey
+        </button>
+
+        <button
+          type="button"
+          onClick={() =>
+            setSelectedDestination("France")
+          }
+        >
+          🇫🇷 France
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
 
           <h1 style={{ color: "white", marginTop: "40px" }}>
             {selectedDestination}
           </h1>
 
-          <div
-            className="cards"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "20px",
-              marginTop: "20px",
-            }}
-          >
-            {filteredPackages.map((item, index) => (
-              <div
-                key={index}
-                className="card"
-                style={{
-                  width: "300px",
-                  background: "white",
-                  borderRadius: "20px",
-                  overflow: "hidden",
-                }}
-              >
-                <div className="card-image">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    style={{
-                      width: "100%",
-                      height: "200px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
+          <div className="travel-cards">
 
-                <div style={{ padding: "20px" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <h3>{item.title}</h3>
-                    <span>{item.days}</span>
-                  </div>
+  {filteredPackages.map((item, index) => (
 
-                  <div style={{ marginTop: "10px" }}>
-                    <p>✈ {item.from}</p>
-                    <p>🏨 {item.hotel}</p>
-                    <p>📅 {item.date}</p>
-                  </div>
+    <div
+      key={index}
+      className="travel-card"
+    >
 
-                  <div
-                    style={{
-                      marginTop: "20px",
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
-                    <div>
-                      <small>Person</small>
-                      <h4>{item.price}</h4>
-                    </div>
+      <div className="travel-image">
 
-                    <button>Book Now</button>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <img
+          src={item.image}
+          alt={item.title}
+        />
+
+        <div className="travel-badge">
+          {item.days}
+        </div>
+
+      </div>
+
+      <div className="travel-content">
+
+        <div className="travel-top">
+
+          <div>
+            <p className="travel-country">
+              {item.country}
+            </p>
+
+            <h3>
+              {item.title}
+            </h3>
           </div>
+
+          <h2>
+            {item.price}
+          </h2>
+
+        </div>
+
+        <div className="travel-info">
+
+          <p>✈ {item.from}</p>
+
+          <p>🏨 {item.hotel}</p>
+
+          <p>📅 {item.date}</p>
+
+        </div>
+
+        <button className="travel-btn">
+          Book Now
+        </button>
+
+      </div>
+
+    </div>
+
+  ))}
+
+</div>
         </section>
       </div>
     </div>
