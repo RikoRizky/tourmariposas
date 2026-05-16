@@ -1,28 +1,32 @@
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 import "./About.css";
 
-const stats = [
-  {
-    id: 1,
-    number: "10K+",
-    text: "Happy Travelers",
-  },
-  {
-    id: 2,
-    number: "250+",
-    text: "Tour Packages",
-  },
-  {
-    id: 3,
-    number: "15+",
-    text: "Years Experience",
-  },
-  {
-    id: 4,
-    number: "98%",
-    text: "Customer Satisfaction",
-  },
-];
+import bali from "./bali.jpg";
+import turki from "./turki.jpg";
+import umroh from "./umroh.jpg";
+
+// const stats = [
+//   {
+//     id: 1,
+//     number: "10K+",
+//     text: "Happy Travelers",
+//   },
+//   {
+//     id: 2,
+//     number: "250+",
+//     text: "Tour Packages",
+//   },
+//   {
+//     id: 3,
+//     number: "15+",
+//     text: "Years Experience",
+//   },
+//   {
+//     id: 4,
+//     number: "98%",
+//     text: "Customer Satisfaction",
+//   },
+// ];
 
 export default function About() {
   const sectionRef = useScrollReveal({ staggerStep: 80 });
@@ -82,44 +86,27 @@ export default function About() {
             </div>
           </div>
 
-          <button type="button" className="about-btn" data-reveal>
-            Explore More →
-          </button>
+          
         </div>
 
         <div className="about-right" data-reveal>
           <div className="about-image-grid">
             <div className="image-large">
-              <img
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop"
-                alt=""
-              />
+              <img src={umroh} alt="Umroh Tour" />
             </div>
 
             <div className="image-small">
-              <img
-                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop"
-                alt=""
-              />
+              <img src={turki} alt="Turki Tour" />
             </div>
 
             <div className="image-small">
-              <img
-                src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1200&auto=format&fit=crop"
-                alt=""
-              />
+              <img src={bali} alt="Bali Tour" />
             </div>
-          </div>
-
-          <div className="experience-card">
-            <h2>15+</h2>
-
-            <p>Years of Experience</p>
           </div>
         </div>
       </div>
 
-      <div className="about-stats">
+      {/* <div className="about-stats">
         {stats.map((item) => (
           <div className="stat-card" key={item.id} data-reveal>
             <h2>{item.number}</h2>
@@ -127,7 +114,7 @@ export default function About() {
             <p>{item.text}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -160,10 +160,10 @@ export function Navbar({ hidden = true }) {
 
         <div className="nav-center">
           <a href="#" onClick={handleNavLinkClick}>Home</a>
+          <a href="#about" onClick={handleNavLinkClick}>About</a>
           <a href="#destination" onClick={handleNavLinkClick}>Destination</a>
           <a href="#tours" onClick={handleNavLinkClick}>Tours</a>
           <a href="#" onClick={handleNavLinkClick}>Blog</a>
-          <a href="#about" onClick={handleNavLinkClick}>About</a>
           <a href="#contact" onClick={handleNavLinkClick}>Contact</a>
           {/* Tombol Book Now versi Desktop */}
           <a href="#tours" className="nav-cta nav-cta-desktop" onClick={handleNavLinkClick}>
@@ -197,10 +197,10 @@ export function Navbar({ hidden = true }) {
             <h3>Navigation</h3>
             <ul>
               <li><a href="#" onClick={handleNavLinkClick}>Home</a></li>
+              <li><a href="#about" onClick={handleNavLinkClick}>About Us</a></li>
               <li><a href="#destination" onClick={handleNavLinkClick}>Destination</a></li>
               <li><a href="#tours" onClick={handleNavLinkClick}>Tours</a></li>
               <li><a href="#" onClick={handleNavLinkClick}>Blog</a></li>
-              <li><a href="#about" onClick={handleNavLinkClick}>About Us</a></li>
               <li><a href="#contact" onClick={handleNavLinkClick}>Contact</a></li>
               
               {/* Tempat Baru Book Now saat di Mobile Overlay */}
