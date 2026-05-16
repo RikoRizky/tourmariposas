@@ -159,9 +159,9 @@ export default function App() {
       <FlowImages />
       <Navbar hidden={!showNavbar} />
       <LandingPageContent />
+      <About />
       <Destination />
       <Tours />
-      <About />
       <Contact />
     </>
   );

@@ -28,32 +28,6 @@ const stats = [
   },
 ];
 
-const teamMembers = [
-  {
-    id: 1,
-    name: "Ahmad Fauzi",
-    role: "Founder & CEO",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop",
-  },
-
-  {
-    id: 2,
-    name: "Sarah Wijaya",
-    role: "Travel Consultant",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
-  },
-
-  {
-    id: 3,
-    name: "Michael Tan",
-    role: "Tour Guide",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
-  },
-];
-
 export default function About() {
   return (
     <section id="about" className="about-section">
@@ -155,33 +129,6 @@ export default function About() {
             <p>{item.text}</p>
           </div>
         ))}
-      </div>
-
-      <div className="team-section">
-        <div className="team-header">
-          <p>OUR TEAM</p>
-
-          <h1>
-            Meet Our Professional
-            <span> Team</span>
-          </h1>
-        </div>
-
-        <div className="team-grid">
-          {teamMembers.map((member) => (
-            <div className="team-card" key={member.id}>
-              <div className="team-image">
-                <img src={member.image} alt={member.name} />
-              </div>
-
-              <div className="team-content">
-                <h2>{member.name}</h2>
-
-                <p>{member.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
