@@ -11,6 +11,8 @@ import Destination from "./components/pages/Destination/Destination.jsx";
 import Tours from "./components/pages/Tours/Tours.jsx";
 import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
+import Footer from "./components/Footer.jsx";
+import "./styles/shared-sections.css";
 
 const FLOW_POSITIONS = [
   { x: -0.8, y: -0.6 }, { x: 0.7, y: 0.4 }, { x: -0.5, y: 0.7 }, { x: 0.6, y: -0.5 },
@@ -88,7 +90,15 @@ function runIntroSequence(onIntroComplete) {
       onStart: () => {
         // PERBAIKAN TARGET ANIMASI: 
         // Mengubah '#landing-nav' menjadi '.modern-nav' agar sesuai dengan class komponen Anda
-        gsap.from(".modern-nav", { y: -80, opacity: 0, duration: 1.5, ease: "expo.out" });
+        gsap.from(".modern-nav", {
+          y: -80,
+          opacity: 0,
+          duration: 1.5,
+          ease: "expo.out",
+          onComplete: () => {
+            gsap.set(".modern-nav", { clearProps: "transform,opacity,y" });
+          },
+        });
         gsap.from(".hero-info", {
           y: 120,
           opacity: 0,
@@ -163,6 +173,7 @@ export default function App() {
       <Destination />
       <Tours />
       <Contact />
+      <Footer />
     </>
   );
 }

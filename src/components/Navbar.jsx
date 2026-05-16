@@ -1,121 +1,213 @@
 import gsap from "gsap";
-import { useLayoutEffect, useRef } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import "./Navbar.css";
+
+function showNav(nav) {
+  if (!nav) return;
+  nav.classList.remove("nav-hidden");
+  nav.classList.add("nav-visible");
+}
 
 export function Navbar({ hidden = true }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
-  const burgerRef = useRef(null);
   const overlayRef = useRef(null);
+  const menuTweenRef = useRef(null);
+  const menuOpenRef = useRef(false);
 
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const toggleMenu = useCallback(() => setMenuOpen((open) => !open), []);
+
+  // 1. Efek untuk menampilkan navbar di awal jika tidak hidden
+  useLayoutEffect(() => {
+    if (hidden) return;
+
+    const nav = navRef.current;
+    if (!nav) return;
+
+    gsap.set(nav, { clearProps: "transform,opacity,y,top" });
+    nav.classList.remove("nav-hidden", "navbar-hidden");
+    nav.classList.add("nav-visible");
+    showNav(nav);
+  }, [hidden]);
+
+  // 2. Efek KHUSUS Scroll Lock (Solusi Bug Scroll)
+  useLayoutEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // 3. Efek untuk Animasi GSAP Overlay Menu
+  useLayoutEffect(() => {
+    const overlay = overlayRef.current;
+    if (!overlay) return;
+
+    if (!hidden && !menuOpen) {
+      overlay.style.display = "none";
+      overlay.style.pointerEvents = "none";
+      gsap.set(overlay, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+      });
+      return;
+    }
+
+    menuOpenRef.current = menuOpen;
+    menuTweenRef.current?.kill();
+
+    if (menuOpen) {
+      overlay.style.display = "block";
+      overlay.style.pointerEvents = "auto";
+
+      menuTweenRef.current = gsap.to(overlay, {
+        clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
+        duration: 0.65,
+        ease: "expo.inOut",
+      });
+    } else {
+      overlay.style.pointerEvents = "none";
+
+      menuTweenRef.current = gsap.to(overlay, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        duration: 0.5,
+        ease: "expo.inOut",
+        onComplete: () => {
+          if (menuOpenRef.current) return;
+          overlay.style.display = "none";
+        },
+      });
+    }
+
+    return () => {
+      menuTweenRef.current?.kill();
+    };
+  }, [menuOpen, hidden]);
+
+  // 4. Efek untuk Hide/Show Navbar saat di-scroll
   useLayoutEffect(() => {
     const nav = navRef.current;
-    const burger = burgerRef.current;
-    const overlay = overlayRef.current;
-    if (!nav || !burger || !overlay) return;
+    if (!nav || hidden) return;
 
-    let showMenu = false;
-    overlay.style.display = "none";
+    let lastScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
 
-    const onBurgerClick = () => {
-      showMenu = !showMenu;
-      if (showMenu) {
-        burger.classList.add("active");
-        overlay.style.display = "block";
-        document.body.style.overflow = "hidden";
-        gsap.to(overlay, 1, {
-          clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
-          ease: "expo.in",
-        });
-      } else {
-        burger.classList.remove("active");
-        gsap.to(overlay, 1, {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          ease: "expo.out",
-          onComplete: () => {
-            overlay.style.display = "none";
-            document.body.style.overflow = "auto";
-          },
-        });
-      }
-    };
+    showNav(nav);
 
-    burger.addEventListener("click", onBurgerClick);
-
-    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const onScroll = () => {
-      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScrollTop > lastScrollTop) {
+      if (menuOpen) return;
+
+      const currentScrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScrollTop < 120) {
+        showNav(nav);
+      } else if (
+        currentScrollTop > lastScrollTop &&
+        currentScrollTop - lastScrollTop > 4
+      ) {
         nav.classList.add("nav-hidden");
         nav.classList.remove("nav-visible");
-      } else if (currentScrollTop < lastScrollTop) {
-        nav.classList.remove("nav-hidden");
-        nav.classList.add("nav-visible");
+      } else if (lastScrollTop - currentScrollTop > 4) {
+        showNav(nav);
       }
+
       lastScrollTop = currentScrollTop;
     };
 
-    nav.classList.add("nav-visible");
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [hidden, menuOpen]);
+
+  // 5. Cleanup global saat komponen unmount
+  useLayoutEffect(() => {
     return () => {
-      burger.removeEventListener("click", onBurgerClick);
-      window.removeEventListener("scroll", onScroll);
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      const overlay = overlayRef.current;
+      if (overlay) {
+        overlay.style.display = "none";
+        overlay.style.pointerEvents = "none";
+      }
     };
   }, []);
 
+  const handleNavLinkClick = () => {
+    closeMenu();
+  };
+
   return (
     <>
-      <nav className={`modern-nav ${hidden ? "navbar-hidden" : "nav-visible"}`} ref={navRef}>
+      <nav
+        className={`modern-nav ${hidden ? "navbar-hidden" : "nav-visible"} ${menuOpen ? "nav-menu-open" : ""}`}
+        ref={navRef}
+      >
         <div className="nav-left">
-          <div className="nav-brand">
+          <a href="#" className="nav-brand" onClick={handleNavLinkClick}>
             <img src="logobg.png" alt="Mariposas Logo" className="brand-logo" />
-            <div className="brand-divider"></div>
+            <div className="brand-divider" />
             <div className="brand-text">
               <h1>MARIPOSAS TOUR</h1>
               <p>Indonesia</p>
             </div>
-          </div>
+          </a>
         </div>
 
         <div className="nav-center">
-          <a href="#">Home</a>
-          <a href="#destination">Destination</a>
-          <a href="#tours">Tours</a>
-          <a href="#">Blog</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
+          <a href="#" onClick={handleNavLinkClick}>Home</a>
+          <a href="#destination" onClick={handleNavLinkClick}>Destination</a>
+          <a href="#tours" onClick={handleNavLinkClick}>Tours</a>
+          <a href="#" onClick={handleNavLinkClick}>Blog</a>
+          <a href="#about" onClick={handleNavLinkClick}>About</a>
+          <a href="#contact" onClick={handleNavLinkClick}>Contact</a>
+          {/* Tombol Book Now versi Desktop */}
+          <a href="#tours" className="nav-cta nav-cta-desktop" onClick={handleNavLinkClick}>
+            Book Now
+          </a>
         </div>
 
         <div className="nav-right">
-          <div ref={burgerRef} id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <button
+            type="button"
+            id="burger"
+            className={`nav-menu-toggle ${menuOpen ? "active" : ""}`}
+            aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
+            aria-expanded={menuOpen}
+            onClick={toggleMenu}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
       </nav>
-      <section ref={overlayRef} className="navbar-overlay-menu">
+
+      <section
+        ref={overlayRef}
+        className={`navbar-overlay-menu ${menuOpen ? "is-open" : ""}`}
+        aria-hidden={!menuOpen}
+      >
         <ul className="level-1">
           <li className="mobile-only-nav">
             <h3>Navigation</h3>
             <ul>
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#destination">Destination</a>
-              </li>
-              <li>
-                <a href="#tours">Tours</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#about">About Us</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
+              <li><a href="#" onClick={handleNavLinkClick}>Home</a></li>
+              <li><a href="#destination" onClick={handleNavLinkClick}>Destination</a></li>
+              <li><a href="#tours" onClick={handleNavLinkClick}>Tours</a></li>
+              <li><a href="#" onClick={handleNavLinkClick}>Blog</a></li>
+              <li><a href="#about" onClick={handleNavLinkClick}>About Us</a></li>
+              <li><a href="#contact" onClick={handleNavLinkClick}>Contact</a></li>
+              
+              {/* Tempat Baru Book Now saat di Mobile Overlay */}
+              <li className="nav-cta-mobile-wrapper">
+                <a href="#tours" className="nav-cta" onClick={handleNavLinkClick}>
+                  Book Now
+                </a>
               </li>
             </ul>
           </li>
@@ -125,9 +217,9 @@ export function Navbar({ hidden = true }) {
             <ul className="level-2">
               <li>
                 <ul className="level-3">
-                  <li>Bali</li>
-                  <li>Cambodia</li>
-                  <li>Japan</li>
+                  <li>Indonesia</li>
+                  <li>Umroh</li>
+                  <li>Turkey</li>
                 </ul>
               </li>
             </ul>

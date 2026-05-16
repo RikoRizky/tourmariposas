@@ -4,7 +4,6 @@
   width: 100%;
   min-height: 100vh;
   padding: 120px 6%;
-  background: #ffffff;
 }
 
 .about-container {
@@ -15,7 +14,7 @@
 }
 
 .about-subtitle {
-  color: #2962ff;
+  color: #2563eb;
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 18px;
@@ -30,7 +29,7 @@
 }
 
 .about-left h1 span {
-  color: #2962ff;
+  color: #2563eb;
 }
 
 .about-description {
@@ -229,10 +228,38 @@
   color: #777;
 }
 
+/* ==========================================================================
+   HANYA MENGUBAH TAMPILAN MOBILE (DI BAWAH 992px)
+   ========================================================================== */
 @media screen and (max-width: 992px) {
+  /* Ubah container menjadi tumpukan flex vertikal tunggal */
   .about-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
   }
+
+  /* TRIK UTAMA: Membuat pembungkus teks seolah-olah tidak ada, 
+     sehingga anak-anaknya bisa diurutkan langsung sejajar dengan kontainer foto */
+  .about-left {
+    display: contents;
+  }
+
+  /* Atur urutan elemen teks di posisi paling atas secara berurutan */
+  .about-subtitle { order: 1; }
+  .about-left h1 { order: 2; }
+  .about-description { order: 3; margin-bottom: 10px; }
+
+  /* Memaksa kontainer foto (.about-right) berada tepat di bawah deskripsi teks */
+  .about-right {
+    order: 4;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* Menurunkan list fitur dan tombol ke paling bawah setelah foto */
+  .about-features { order: 5; }
+  .about-btn { order: 6; margin-top: 20px; }
 
   .experience-card {
     left: 20px;
