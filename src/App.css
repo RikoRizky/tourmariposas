@@ -2,3 +2,8 @@
   visibility: hidden;
   opacity: 0;
 }
+
+#destination {
+  visibility: hidden;
+  opacity: 0;
+}

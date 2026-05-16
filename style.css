@@ -8,6 +8,9 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
   --black: #242424;
   --white: #f5f5f5;
   --pill: #e0d4be;
@@ -20,12 +23,16 @@ ul {
 
 .page-wrap {
   position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 header {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
 }
 
 /* NAV: Modern Navbar Section
@@ -46,6 +53,26 @@ header {
   padding: 0 30px;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.modern-nav.navbar-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -130%);
+}
+
+.modern-nav.nav-hidden {
+  transform: translate(-50%, -130%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modern-nav.nav-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
 }
 
 .nav-left {
@@ -164,8 +191,8 @@ header {
 /* MAIN: Slider Section
 ----------------------------------------------- */
 main {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -184,6 +211,13 @@ article {
   left: 5%;
   transform: translateY(-50%);
   z-index: 8;
+  pointer-events: none;
+  max-width: 55vw;
+}
+
+.hero-reveal {
+  position: relative;
+  z-index: 10;
 }
 .hero-info h2 {
   font-size: clamp(2rem, 9vw, 5rem);
@@ -218,6 +252,7 @@ article {
   background-position: center;
   background-repeat: no-repeat;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
 }
 
 .hi-1 { background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2070&q=80"); }
@@ -228,12 +263,15 @@ article {
 
 /* SECTION: Overlay Menu
 ----------------------------------------------- */
-section.overlay-menu {
-  position: absolute;
+section.navbar-overlay-menu {
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  width: 100%;
   min-height: 100vh;
+  z-index: 9999;
+  overflow-y: auto;
+  display: none;
   padding: 8em 5em 2em 5em;
   background-color: var(--white);
   background-image: url("https://www.transparenttextures.com/patterns/church.png");
@@ -269,6 +307,101 @@ section.overlay-menu {
   .brand-logo { height: 95px; left: -10px; }
   .brand-text h1 { font-size: 0.9rem; }
   
-  section.overlay-menu { padding: 8em 2em; }
+  section.navbar-overlay-menu { padding: 8em 2em; }
   .level-1 { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 768px) {
+  .modern-nav {
+    top: 15px;
+    width: 96%;
+    padding: 0 18px;
+    min-height: 60px;
+  }
+
+  .nav-left {
+    padding-left: 80px;
+  }
+
+  .brand-logo {
+    height: 90px;
+    left: -12px;
+  }
+
+  .brand-text h1 {
+    font-size: 0.95rem;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  #burger {
+    width: 36px;
+  }
+
+  .hero-info {
+    left: 50%;
+    max-width: 90vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 45%;
+  }
+
+  .hero-info h2 {
+    font-size: clamp(2rem, 7vw, 4rem);
+  }
+
+  .hero-info h1 {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+
+  .hero-info h3 {
+    font-size: 1.2rem;
+    margin-top: 1.2em;
+  }
+
+  section.navbar-overlay-menu {
+    padding: 6rem 1.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .modern-nav {
+    top: 12px;
+    padding: 0 14px;
+  }
+
+  .nav-left {
+    padding-left: 70px;
+  }
+
+  .brand-logo {
+    height: 75px;
+    left: -10px;
+  }
+
+  .brand-text h1 {
+    font-size: 0.85rem;
+  }
+
+  .hero-info {
+    top: 48%;
+  }
+
+  .hero-info h2 {
+    font-size: clamp(1.6rem, 8vw, 3rem);
+  }
+
+  .hero-info h1 {
+    font-size: clamp(2.2rem, 15vw, 4rem);
+  }
+
+  .hero-info h3 {
+    font-size: 1rem;
+  }
+
+  .level-1 {
+    gap: 1.4rem;
+  }
 }
