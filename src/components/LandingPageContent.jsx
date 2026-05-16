@@ -15,26 +15,36 @@ export function LandingPageContent() {
     overlay.style.display = "none";
 
     const onBurgerClick = () => {
-      showMenu = !showMenu;
-      if (showMenu) {
-        burger.classList.add("active");
-        overlay.style.display = "block";
-        gsap.to(overlay, 1, {
-          clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
-          ease: "expo.in",
-        });
-      } else {
-        burger.classList.remove("active");
-        gsap.to(overlay, 1, {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          ease: "expo.out",
-          onComplete: () => {
-            overlay.style.display = "none";
-          },
-        });
-      }
-    };
+  showMenu = !showMenu;
 
+  if (showMenu) {
+    burger.classList.add("active");
+
+    overlay.style.display = "block";
+
+    overlay.classList.add("active-overlay");
+
+    gsap.to(overlay, {
+      duration: 1,
+      clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
+      ease: "expo.in",
+    });
+  } else {
+    burger.classList.remove("active");
+
+    overlay.classList.remove("active-overlay");
+
+    gsap.to(overlay, {
+      duration: 1,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+      ease: "expo.out",
+
+      onComplete: () => {
+        overlay.style.display = "none";
+      },
+    });
+  }
+};
     burger.addEventListener("click", onBurgerClick);
 
     const ctx = gsap.context(() => {
@@ -90,10 +100,12 @@ export function LandingPageContent() {
             </div>
 
             <div className="nav-center">
-              <a href="#">Discover</a>
-              <a href="#">Experience</a>
-              <a href="#">Destination</a>
-              <a href="#">Information</a>
+              <a href="#">Home</a>
+              <a href="#destination">Destination</a>
+              <a href="#">Tours</a>
+              <a href="#">Blog</a>
+              <a href="#">About Us</a>
+              <a href="#">Contact</a>
             </div>
 
             <div className="nav-right">
