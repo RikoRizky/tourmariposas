@@ -1,0 +1,268 @@
+@keyframes stroke {
+    from {
+        stroke-dashoffset: 5414.29;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes colorFade {
+    to {
+        background-color: rgb(178, 203, 235);
+    }
+}
+
+@keyframes reveal {
+    from {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        scale: .2;
+    }
+}
+
+@keyframes revealText {
+    from {
+        clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+    }
+}
+
+html {
+    background-color: rgb(32, 91, 173);
+    animation: colorFade linear forwards;
+    animation-timeline: scroll();
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* GLOBAL IMAGE STYLING */
+img {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    display: block;
+    width: 100%;
+    max-width: 400px; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 24px;
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: 10% 60%;
+}
+
+.btn {
+    background-color: rgb(32, 91, 173);
+    border-radius: 99px;
+    color: white;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    line-height: 44px;
+    height: 44px;
+    padding: 0 35px;
+    text-decoration: none;
+    transition: background-color .4s ease-out;
+    width: fit-content;
+    
+    &:hover {
+        background-color: rgb(222, 40, 112);
+    }
+}
+
+.page-header {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+}
+
+#scroll-section {
+    container: inline-size;
+    display: grid;
+    position: relative;
+    min-height: 2200px; 
+    padding-block-start: 25vh;
+}
+
+.line-svg {
+    grid-row: 1;
+    grid-column: 1;
+    height: calc(100% - 10rem);
+    top: 25cqb;
+    min-width: 300px;
+    z-index: 1;
+}
+
+.anim-overview-stroke {
+    stroke-dasharray: 5414.29;
+    stroke-dashoffset: 5414.29;
+    animation: stroke linear forwards;
+    animation-timeline: scroll();   
+    animation-range: -10% 85%;
+}
+
+.container {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
+    z-index: 2;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    color: white;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: .02em;
+    margin: 0;
+    padding-top: 72px;
+    position: relative;
+    width: 70%;
+    text-align: right;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    animation: revealText linear both;
+    animation-timeline: view();
+    animation-range: 25% 60%;
+}
+
+.layout-container {
+    padding-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px; 
+}
+
+/* GLOBAL BOX STYLING */
+.box {
+    background-color: white;
+    color: #333;
+    padding: 3.5rem; 
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    opacity: 1;
+    scale: 1;
+    align-self: start; 
+    animation: scaleIn linear both;
+    animation-timeline: view();
+    animation-range: 0% 40vh;
+    box-sizing: border-box;
+    
+    h3 {
+        font-size: 36px;
+        font-weight: 900;
+        letter-spacing: .02em;
+        margin: 0 0 18px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 2em;
+        color: #4a5568;
+    }
+}
+
+/* KONTROL GRID DESKTOP (Default asli kamu) */
+.box-1 { grid-column: 3 / span 3; grid-row: 1; }
+.image-1 { grid-column: 1 / span 2; grid-row: 1; margin-top: 80px; }
+
+.box-2 { grid-column: 2 / span 3; grid-row: 2; margin-top: 6rem; }
+.image-2 { grid-column: 5 / span 2; grid-row: 2; margin-top: 140px; }
+
+.box-3 { grid-column: 3 / span 3; grid-row: 3; margin-top: 6rem; margin-bottom: -4rem; }
+.image-3 { grid-column: 1 / span 2; grid-row: 3; margin-top: 120px; }
+
+.bottom {
+    height: 50vh;
+}
+
+/* ==========================================================================
+   MEDIA QUERY UNTUK LAYAR HP & TABLET (RESPONSIVE MODE)
+   ========================================================================== */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 32px;
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    #scroll-section {
+        min-height: auto; /* Biarkan tinggi section mengikuti konten mengalir ke bawah */
+        padding-block-start: 10vh;
+    }
+    
+    /* Sembunyikan garis SVG di HP karena jalurnya akan berantakan jika layout jadi 1 kolom */
+    .line-svg {
+        display: none;
+    }
+    
+    .layout-container {
+        padding-top: 4rem;
+        grid-template-columns: 1fr; /* Ubah grid menjadi 1 kolom saja */
+        gap: 30px;
+    }
+    
+    .box {
+        padding: 2rem; /* Perkecil padding dalam boks agar pas di layar HP */
+        grid-column: 1 / -1 !important; /* Paksa boks penuhi lebar layar */
+        grid-row: auto !important; /* Biarkan mengalir otomatis urutannya */
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        
+        h3 {
+            font-size: 26px; /* Perkecil teks judul destinasi di HP */
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    
+    img {
+        grid-column: 1 / -1 !important; /* Paksa gambar penuhi lebar layar */
+        grid-row: auto !important; /* Urutan otomatis mengikuti HTML */
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
+        max-width: 100%; /* Gambar menyesuaikan lebar HP */
+        justify-self: center;
+    }
+    
+    /* Atur ulang urutan visual di HP agar polanya konsisten: Gambar dulu baru Penjelasannya */
+    .image-1 { order: 1; }
+    .box-1   { order: 2; margin-bottom: 3rem !important; }
+    
+    .image-2 { order: 3; }
+    .box-2   { order: 4; margin-bottom: 3rem !important; }
+    
+    .image-3 { order: 5; }
+    .box-3   { order: 6; }
+}

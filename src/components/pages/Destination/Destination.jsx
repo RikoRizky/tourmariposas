@@ -1,96 +1,89 @@
-
 import "./Destination.css";
 
-const destinations = [
+const packages = [
   {
     id: 1,
-    name: "Bali",
-    country: "Indonesia",
-    image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80",
+    title: "Wonderful Indonesia",
     description:
-      "Nikmati keindahan pantai, budaya tradisional, dan sunset terbaik di Bali.",
-    price: "Rp 4.500.000",
-    duration: "5 Days",
+      "Jelajahi keindahan tanah air mulai dari eksotisme Bali, keajaiban bawah laut Raja Ampat, hingga kemegahan budaya Nusantara. Temukan petualangan tak terlupakan di destinasi terbaik domestik bersama kami.",
+    image:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Indonesia Destination",
+    boxClass: "box-1",
+    imageClass: "image-1",
   },
-
   {
     id: 2,
-    name: "Raja Ampat",
-    country: "Indonesia",
-    image:
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=80",
+    title: "Umroh Premium",
     description:
-      "Surga bawah laut dengan pemandangan pulau eksotis dan laut biru jernih.",
-    price: "Rp 8.900.000",
-    duration: "7 Days",
+      "Wujudkan perjalanan ibadah yang khusyuk dan nyaman ke Tanah Suci. Nikmati fasilitas hotel terbaik yang dekat dengan Masjidil Haram dan Masjid Nabawi, didampingi oleh pembimbing ibadah yang berpengalaman.",
+    image:
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Umroh Makkah Destination",
+    boxClass: "box-2",
+    imageClass: "image-2",
   },
-
   {
     id: 3,
-    name: "Kyoto",
-    country: "Japan",
-    image:
-      "https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=1200&q=80",
+    title: "Spectacular Turkiye",
     description:
-      "Jelajahi kuil tradisional, sakura, dan budaya khas Jepang.",
-    price: "Rp 12.500.000",
-    duration: "6 Days",
-  },
-
-  {
-    id: 4,
-    name: "Swiss Alps",
-    country: "Switzerland",
+      "Rasakan perpaduan menakjubkan antara sejarah Asia dan Eropa. Mulai dari keindahan bangunan kuno Hagia Sophia di Istanbul hingga sensasi terbang dengan balon udara di atas tebing-tebing indah Cappadocia.",
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Pegunungan salju indah dengan pengalaman liburan premium.",
-    price: "Rp 18.000.000",
-    duration: "8 Days",
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Turkiye Cappadocia Destination",
+    boxClass: "box-3",
+    imageClass: "image-3",
   },
 ];
 
 export default function Destination() {
   return (
-    <section id="destination" className="destination-section">
-      <div className="destination-header">
-        <p>POPULAR DESTINATION</p>
+    <section id="destination" className="destination-scroll">
+      <section className="destination-scroll-section" aria-labelledby="destination-heading">
+        <svg
+          className="line-svg"
+          role="presentation"
+          preserveAspectRatio="xMidYMin slice"
+          width="100%"
+          fill="none"
+          viewBox="-480 0 2300 2241"
+        >
+          <path
+            className="anim-overview-stroke"
+            stroke="#C7DBF4"
+            strokeWidth="160"
+            d="M-841 100H584c124 0 225 101 225 225v0c0 124-101 225-225 225h-95a281 281 0 00-281 281v0c0 155 125 281 281 281h442c167 0 304 136 304 304v0c0 168-137 304-304 304H795a439 439 0 00-439 439v82"
+            opacity=".45"
+          />
+        </svg>
 
-        <h1>
-          Explore The Most
-          <span> Beautiful Places</span>
-        </h1>
-      </div>
+        <div className="container">
+          <h2 id="destination-heading">Explore The Most Beautiful Places</h2>
 
-      <div className="destination-grid">
-        {destinations.map((item) => (
-          <div className="destination-card" key={item.id}>
-            <div
-              className="destination-image"
-              style={{
-                backgroundImage: `url(${item.image})`,
-              }}
-            >
-              <div className="destination-overlay">
-                <h2>{item.name}</h2>
-                <p>{item.country}</p>
-              </div>
-            </div>
-
-            <div className="destination-content">
-              <p>{item.description}</p>
-
-              <div className="destination-info">
-                <span>{item.duration}</span>
-                <span>{item.price}</span>
-              </div>
-
-              <button>Book Now</button>
-            </div>
+          <div className="layout-container">
+            {packages.flatMap((pkg) => [
+              <div key={`${pkg.id}-box`} className={`box ${pkg.boxClass}`}>
+                <h3>{pkg.title}</h3>
+                <p>{pkg.description}</p>
+                <a href="#contact" className="btn">
+                  Find out more
+                </a>
+              </div>,
+              <img
+                key={`${pkg.id}-img`}
+                className={pkg.imageClass}
+                src={pkg.image}
+                width="400"
+                height="400"
+                alt={pkg.imageAlt}
+                loading="lazy"
+              />,
+            ])}
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
+
+      <section className="destination-scroll-bottom" aria-hidden="true" />
     </section>
   );
 }
