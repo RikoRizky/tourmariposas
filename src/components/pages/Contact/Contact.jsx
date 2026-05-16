@@ -1,11 +1,11 @@
-// src/components/pages/Contact/Contact.jsx
-
 import "./Contact.css";
 
 export default function Contact() {
   return (
     <section id="contact" className="contact-section">
+
       <div className="contact-header">
+
         <p>CONTACT US</p>
 
         <h1>
@@ -14,102 +14,71 @@ export default function Contact() {
         </h1>
 
         <h3>
-          Hubungi tim kami untuk konsultasi perjalanan,
-          booking paket tour, dan informasi lainnya.
+          Hubungi kami untuk informasi paket wisata,
+          reservasi perjalanan, dan konsultasi liburan terbaik.
         </h3>
+
       </div>
 
-      <div className="contact-container">
-        <div className="contact-left">
+      <div className="contact-wrapper">
+
+        <div className="contact-info">
+
           <div className="contact-card">
-            <div className="contact-icon">📍</div>
+            <h2>📍 Office Address</h2>
 
-            <div>
-              <h2>Office Address</h2>
-
-              <p>
-                Jl. Sunset Road No. 88,
-                <br />
-                Bali, Indonesia
-              </p>
-            </div>
+            <p>
+              Pasar modern paramount u35
+              gading serpong, tangerang, Indonesia
+            </p>
           </div>
 
           <div className="contact-card">
-            <div className="contact-icon">📞</div>
+            <h2>📞 Phone Number</h2>
 
-            <div>
-              <h2>Phone Number</h2>
-
-              <p>+62 812 3456 7890</p>
-            </div>
+            <p>
+              +62 813 1549 9154
+            </p>
           </div>
 
           <div className="contact-card">
-            <div className="contact-icon">✉️</div>
+            <h2>✉ Email Address</h2>
 
-            <div>
-              <h2>Email Address</h2>
-
-              <p>hello@mariposastour.com</p>
-            </div>
+            <p>
+              mariposasindonesia@gmail.com
+            </p>
           </div>
 
           <div className="contact-card">
-            <div className="contact-icon">🕒</div>
+  <h2>📸 Instagram</h2>
 
-            <div>
-              <h2>Working Hours</h2>
+  <p>
+    <a
+      href="https://www.instagram.com/mariposas_indonesia?igsh=MWNtaXI1ZHQwbjFkNw=="
+      target="_blank"
+      rel="noreferrer"
+    >
+      @mariposas_indonesia
+    </a>
+  </p>
+</div>
 
-              <p>Mon - Sat : 08.00 - 20.00</p>
-            </div>
-          </div>
         </div>
 
-        <div className="contact-right">
-          <form className="contact-form">
-            <div className="form-group">
-              <label>Full Name</label>
+        <div className="contact-map">
 
-              <input
-                type="text"
-                placeholder="Enter your full name"
-              />
-            </div>
+  <iframe
+    title="Google Maps"
+    src="https://www.google.com/maps?q=Pasar+Modern+Paramount+U35+Gading+Serpong+Tangerang&output=embed"
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
 
-            <div className="form-group">
-              <label>Email Address</label>
+</div>
 
-              <input
-                type="email"
-                placeholder="Enter your email"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Destination</label>
-
-              <input
-                type="text"
-                placeholder="Where do you want to go?"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Your Message</label>
-
-              <textarea
-                rows="6"
-                placeholder="Write your message..."
-              ></textarea>
-            </div>
-
-            <button type="submit">
-              Send Message →
-            </button>
-          </form>
-        </div>
       </div>
+
     </section>
   );
 }
