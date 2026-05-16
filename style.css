@@ -228,7 +228,7 @@ article {
 
 /* SECTION: Overlay Menu
 ----------------------------------------------- */
-section {
+section.overlay-menu {
   position: absolute;
   top: 0;
   left: 0;
@@ -269,7 +269,6 @@ section {
   .brand-logo { height: 95px; left: -10px; }
   .brand-text h1 { font-size: 0.9rem; }
   
-  section { padding: 8em 2em; }
+  section.overlay-menu { padding: 8em 2em; }
   .level-1 { grid-template-columns: 1fr; }
 }
-

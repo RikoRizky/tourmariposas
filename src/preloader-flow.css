@@ -19,7 +19,7 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-section {
+section.overlay-menu {
   position: absolute;
   top: 0;
   left: 0;
