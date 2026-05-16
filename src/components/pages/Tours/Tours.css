@@ -221,16 +221,3 @@
   }
 }
 
-.tour-image {
-  position: relative;
-  width: 100%;
-  height: 320px;
-  overflow: hidden;
-}
-
-.tour-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}

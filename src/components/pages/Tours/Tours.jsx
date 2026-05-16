@@ -4,6 +4,21 @@ import { useState } from "react";
 import "./Tours.css";
 
 import umh1 from "./umh1.PNG";
+import umh2 from "./umh2.PNG";
+import umh3 from "./umh3.PNG";
+import umh4 from "./umh4.PNG";
+import umh5 from "./umh5.PNG";
+import umh6 from "./umh6.PNG";
+import umh7 from "./umh7.PNG";
+import umh8 from "./umh8.PNG";
+import umh9 from "./umh9.PNG";
+import umh10 from "./umh10.PNG";
+import umh11 from "./umh11.PNG";
+import umh12 from "./umh12.PNG";
+import umh13 from "./umh13.PNG";
+import umh14 from "./umh14.PNG";
+import umh15 from "./umh15.PNG";
+import umh16 from "./umh16.PNG";
 
 const categories = [
   "Semua Paket",
@@ -14,75 +29,132 @@ const categories = [
 
 const toursData = [
   {
-    id: 1,
-    category: "Indonesia",
-    title: "Paket Indonesia Arbain Juli 2026",
-    duration: "15 Hari",
-    image:
-      "https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=1200&auto=format&fit=crop",
-  },
+  id: 1,
+  category: "Umroh",
+  title: "Paket Umroh Arbain Juli 2026",
+  duration: "15 Hari",
+  image: umh1,
+},
 
-  {
-    id: 2,
-    category: "Promo",
-    title: "Paket Indonesia Arbain Syawal 2026",
-    duration: "18 Hari",
-    image:
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1200&auto=format&fit=crop",
-  },
+{
+  id: 2,
+  category: "Umroh",
+  title: "Paket Umroh Arbain Syawal 2026",
+  duration: "18 Hari",
+  image: umh2,
+},
 
-  {
-    id: 3,
-    category: "Promo",
-    title: "Paket Indonesia Promo Special 2026",
-    duration: "27 Hari",
-    image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop",
-  },
+{
+  id: 3,
+  category: "Umroh",
+  title: "Paket Umroh Promo Special 2026",
+  duration: "27 Hari",
+  image: umh3,
+},
 
-  {
-    id: 4,
-    category: "Indonesia",
-    title: "Paket Indonesia PBI 2026",
-    duration: "9 - 12 Hari",
-    image:
-      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200&auto=format&fit=crop",
-  },
+{
+  id: 4,
+  category: "Umroh",
+  title: "Paket Umroh PBI 2026",
+  duration: "9 - 12 Hari",
+  image: umh4,
+},
 
-  {
-    id: 5,
-    category: "Turkey",
-    title: "Japan Sakura Tour",
-    duration: "7 Hari",
-    image:
-      "https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=1200&auto=format&fit=crop",
-  },
+{
+  id: 5,
+  category: "Umroh",
+  title: "Umroh Exclusive Premium",
+  duration: "12 Hari",
+  image: umh5,
+},
 
-  {
-    id: 6,
-    category: "Umroh",
-    title: "Bali Premium Holiday",
-    duration: "5 Hari",
-    image: umh1,
-  },
+{
+  id: 6,
+  category: "Umroh",
+  title: "Umroh Reguler Hemat",
+  duration: "10 Hari",
+  image: umh6,
+},
 
-  {
-    id: 7,
-    category: "Honeymoon",
-    title: "Maldives Honeymoon",
-    duration: "6 Hari",
-    image:
-      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1200&auto=format&fit=crop",
-  },
+{
+  id: 7,
+  category: "Umroh",
+  title: "Umroh Private VIP",
+  duration: "8 Hari",
+  image: umh7,
+},
 
-  {
-    id: 8,
-    category: "Umroh",
-    title: "Raja Ampat Adventure",
-    duration: "5 Hari",
-    image:
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop",
-  },
+{
+  id: 8,
+  category: "Umroh",
+  title: "Paket Umroh Sederhana",
+  duration: "20 Hari",
+  image: umh8,
+},
+
+{
+  id: 9,
+  category: "Umroh",
+  title: "Umroh Plus Turki",
+  duration: "14 Hari",
+  image: umh9,
+},
+
+{
+  id: 10,
+  category: "Umroh",
+  title: "Umroh Plus Dubai",
+  duration: "13 Hari",
+  image: umh10,
+},
+
+{
+  id: 11,
+  category: "Umroh",
+  title: "Umroh Ramadhan Special",
+  duration: "16 Hari",
+  image: umh11,
+},
+
+{
+  id: 12,
+  category: "Umroh",
+  title: "Umroh Akhir Tahun",
+  duration: "11 Hari",
+  image: umh12,
+},
+
+{
+  id: 13,
+  category: "Umroh",
+  title: "Umroh Plus Aqsa",
+  duration: "15 Hari",
+  image: umh13,
+},
+
+{
+  id: 14,
+  category: "Umroh",
+  title: "Umroh VIP Executive",
+  duration: "9 Hari",
+  image: umh14,
+},
+
+{
+  id: 15,
+  category: "Umroh",
+  title: "Umroh Family Package",
+  duration: "12 Hari",
+  image: umh15,
+},
+
+{
+  id: 16,
+  category: "Umroh",
+  title: "Umroh Premium Plus",
+  duration: "14 Hari",
+  image: umh16,
+},
 ];
 
 export default function Tours() {
@@ -128,28 +200,36 @@ export default function Tours() {
 
       <div className="tours-grid">
         {filteredTours.map((tour) => (
-          <div className="tour-card" key={tour.id}>
-            
-            <div className="tour-image">
-              <img src={tour.image} alt={tour.title} />
+  <div className="tour-card" key={tour.id}>
 
-              <div className="tour-overlay"></div>
+    <div className="tour-slider">
 
-              <div className="tour-badge">
-                <span>{tour.duration}</span>
-              </div>
-            </div>
+      <div className="tour-slider-track">
 
-            <div className="tour-content">
-              <h2>{tour.title}</h2>
-
-              <p>{tour.duration}</p>
-
-              <button>Lihat Detail →</button>
-            </div>
-
+        {tour.images.map((img, index) => (
+          <div className="tour-slide" key={index}>
+            <img src={img} alt={tour.title} />
           </div>
         ))}
+
+      </div>
+
+      <div className="tour-badge">
+        <span>{tour.duration}</span>
+      </div>
+
+    </div>
+
+    <div className="tour-content">
+      <h2>{tour.title}</h2>
+
+      <p>{tour.duration}</p>
+
+      <button>Lihat Detail →</button>
+    </div>
+
+  </div>
+))}
       </div>
 
       <div className="tour-help">
