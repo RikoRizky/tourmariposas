@@ -78,10 +78,12 @@ export function Navbar({ hidden = true }) {
         </div>
 
         <div className="nav-center">
-          <a href="#">Discover</a>
-          <a href="#">Experience</a>
+          <a href="#">Home</a>
           <a href="#destination">Destination</a>
-          <a href="#">Information</a>
+          <a href="#tours">Tours</a>
+          <a href="#">Blog</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
         </div>
 
         <div className="nav-right">
@@ -97,12 +99,24 @@ export function Navbar({ hidden = true }) {
           <li className="mobile-only-nav">
             <h3>Navigation</h3>
             <ul>
-              <li>Discover</li>
-              <li>Experience</li>
+              <li>
+                <a href="#home">Home</a>
+              </li>
               <li>
                 <a href="#destination">Destination</a>
               </li>
-              <li>Information</li>
+              <li>
+                <a href="#tours">Tours</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#about">About Us</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
           </li>
 

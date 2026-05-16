@@ -8,6 +8,9 @@ import { FlowImages } from "./components/FlowImages.jsx";
 import { LandingPageContent } from "./components/LandingPageContent.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 import Destination from "./components/pages/Destination/Destination.jsx";
+import Tours from "./components/pages/Tours/Tours.jsx";
+import About from "./components/pages/About/About";
+import Contact from "./components/pages/Contact/Contact";
 
 const FLOW_POSITIONS = [
   { x: -0.8, y: -0.6 }, { x: 0.7, y: 0.4 }, { x: -0.5, y: 0.7 }, { x: 0.6, y: -0.5 },
@@ -157,6 +160,9 @@ export default function App() {
       <Navbar hidden={!showNavbar} />
       <LandingPageContent />
       <Destination />
+      <Tours />
+      <About />
+      <Contact />
     </>
   );
 }
