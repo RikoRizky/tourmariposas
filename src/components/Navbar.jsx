@@ -159,7 +159,6 @@ export function Navbar({ hidden = true }) {
         </div>
 
         <div className="nav-center">
-          <a href="#" onClick={handleNavLinkClick}>Home</a>
           <a href="#about" onClick={handleNavLinkClick}>About</a>
           <a href="#destination" onClick={handleNavLinkClick}>Destination</a>
           <a href="#tours" onClick={handleNavLinkClick}>Tours</a>
@@ -196,7 +195,6 @@ export function Navbar({ hidden = true }) {
           <li className="mobile-only-nav">
             <h3>Navigation</h3>
             <ul>
-              <li><a href="#" onClick={handleNavLinkClick}>Home</a></li>
               <li><a href="#about" onClick={handleNavLinkClick}>About Us</a></li>
               <li><a href="#destination" onClick={handleNavLinkClick}>Destination</a></li>
               <li><a href="#tours" onClick={handleNavLinkClick}>Tours</a></li>
