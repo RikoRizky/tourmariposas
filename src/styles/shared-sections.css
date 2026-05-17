@@ -1,3 +1,11 @@
+/* Anchor scroll offset di bawah navbar fixed */
+#about,
+#destination,
+#tours,
+#contact {
+  scroll-margin-top: 120px;
+}
+
 /* Premium section backgrounds & scroll reveal — white / blue theme */
 
 .page-section-bg {
