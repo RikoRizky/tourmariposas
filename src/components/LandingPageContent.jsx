@@ -1,6 +1,11 @@
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
 
+// 1. Import semua gambar dari folder assets kamu ke sini
+import gambarBali from "../assets/bali.jpg";
+import gambarTurki from "../assets/turki.jpg";
+import gambarUmroh from "../assets/umroh.jpg";
+
 export function LandingPageContent() {
   const landingRef = useRef(null);
 
@@ -52,23 +57,28 @@ export function LandingPageContent() {
                 <h1>Indonesia</h1>
                 <h3>Explore the beauty of Indonesia</h3>
               </div>
-              <div className="hero-image hi-1"></div>
+              {/* 2. Pasang gambar menggunakan inline style */}
+              <div className="hero-image hi-1" style={{ backgroundImage: `url(${gambarBali})` }}></div>
             </article>
+
             <article id="hero-2" style={{ "--i": 2 }}>
               <div className="hero-info">
                 <h2>Spectacular Turkiye</h2>
                 <h1>Turkiye</h1>
                 <h3>Explore the beauty of Turkiye</h3>
               </div>
-              <div className="hero-image hi-2"></div>
+              {/* 2. Pasang gambar menggunakan inline style */}
+              <div className="hero-image hi-2" style={{ backgroundImage: `url(${gambarTurki})` }}></div>
             </article>
+
             <article id="hero-3" style={{ "--i": 1 }}>
               <div className="hero-info">
                 <h2>Umroh Premium</h2>
                 <h1>Umroh</h1>
                 <h3>Explore the beauty of Umroh</h3>
               </div>
-              <div className="hero-image hi-3"></div>
+              {/* 2. Pasang gambar menggunakan inline style */}
+              <div className="hero-image hi-3" style={{ backgroundImage: `url(${gambarUmroh})` }}></div>
             </article>
           </main>
         </header>

@@ -261,12 +261,6 @@ main {
   z-index: 1;
 }
 
-.hi-1 { background-image: url("bali.jpg"); }
-.hi-2 { background-image: url("turki.jpg"); }
-.hi-3 { background-image: url("umroh.jpg"); }
-.hi-4 { background-image: url("bali.jpg"); }
-.hi-5 { background-image: url("turki.jpg"); }
-
 /* SECTION: Overlay Menu
 ----------------------------------------------- */
 section.navbar-overlay-menu {
