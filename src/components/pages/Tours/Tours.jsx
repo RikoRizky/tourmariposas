@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ImageLightbox } from "../../ImageLightbox.jsx";
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 import { openWhatsApp } from "../../../utils/whatsapp.js";
@@ -63,6 +63,8 @@ export default function Tours() {
   const [activeCategory, setActiveCategory] = useState("Semua Paket");
   const [showAll, setShowAll] = useState(false);
   const [lightbox, setLightbox] = useState(null);
+  const showMoreWrapRef = useRef(null);
+  const collapseScrollAnchorRef = useRef(null);
 
   const sectionRef = useScrollReveal({ staggerStep: 100 });
 
@@ -82,6 +84,28 @@ export default function Tours() {
   useEffect(() => {
     setShowAll(false);
   }, [activeCategory]);
+
+  useLayoutEffect(() => {
+    const anchorTop = collapseScrollAnchorRef.current;
+    if (anchorTop === null || showAll) return;
+
+    const wrap = showMoreWrapRef.current;
+    collapseScrollAnchorRef.current = null;
+    if (!wrap) return;
+
+    const delta = wrap.getBoundingClientRect().top - anchorTop;
+    if (delta !== 0) {
+      window.scrollBy(0, delta);
+    }
+  }, [showAll, displayedTours.length]);
+
+  const handleToggleShowAll = () => {
+    if (showAll && showMoreWrapRef.current) {
+      collapseScrollAnchorRef.current =
+        showMoreWrapRef.current.getBoundingClientRect().top;
+    }
+    setShowAll((prev) => !prev);
+  };
 
   return (
     <section id="tours" className="tours-section page-section-bg" ref={sectionRef}>
@@ -176,11 +200,11 @@ export default function Tours() {
       </div>
 
       {hasMoreTours && (
-        <div className="tours-show-more-wrap" data-reveal>
+        <div className="tours-show-more-wrap" data-reveal ref={showMoreWrapRef}>
           <button
             type="button"
             className="tours-show-more-btn"
-            onClick={() => setShowAll((prev) => !prev)}
+            onClick={handleToggleShowAll}
           >
             {showAll ? "Tampilkan lebih sedikit" : "Lihat selengkapnya"}
           </button>
