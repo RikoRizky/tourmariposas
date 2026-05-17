@@ -19,14 +19,14 @@ export function LandingPageContent() {
 
       gsap.set(
         [
-          `#hero-2 h2, #hero-3 h2, #hero-4 h2, #hero-5 h2,
-           #hero-2 h1, #hero-3 h1, #hero-4 h1, #hero-5 h1,
-           #hero-2 h3, #hero-3 h3, #hero-4 h3, #hero-5 h3`,
+          `#hero-2 h2, #hero-3 h2,
+           #hero-2 h1, #hero-3 h1,
+           #hero-2 h3, #hero-3 h3`,
         ],
         { clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" }
       );
 
-      while (i < 5) {
+      while (i < 3) {
         tl.to(`#hero-${i} h2`, 0.9, { clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)", delay: del })
           .to(`#hero-${i} h1`, 0.9, { clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" }, "-=0.3")
           .to(`#hero-${i} h3`, 0.9, { clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" }, "-=0.3")
@@ -46,45 +46,29 @@ export function LandingPageContent() {
       <div className="page-wrap">
         <header className="page-header">
           <main>
-            <article id="hero-1" style={{ "--i": 5 }}>
+            <article id="hero-1" style={{ "--i": 3 }}>
               <div className="hero-info">
-                <h2>Travel the</h2>
-                <h1>World</h1>
-                <h3>Pragser Wildsee, Italy</h3>
+                <h2>Wonderful Indonesia</h2>
+                <h1>Indonesia</h1>
+                <h3>Explore the beauty of Indonesia</h3>
               </div>
               <div className="hero-image hi-1"></div>
             </article>
-            <article id="hero-2" style={{ "--i": 4 }}>
+            <article id="hero-2" style={{ "--i": 2 }}>
               <div className="hero-info">
-                <h2>Savour the</h2>
-                <h1>Journey</h1>
-                <h3>Marignier, France</h3>
+                <h2>Spectacular Turkiye</h2>
+                <h1>Turkiye</h1>
+                <h3>Explore the beauty of Turkiye</h3>
               </div>
               <div className="hero-image hi-2"></div>
             </article>
-            <article id="hero-3" style={{ "--i": 3 }}>
+            <article id="hero-3" style={{ "--i": 1 }}>
               <div className="hero-info">
-                <h2>Expand Your</h2>
-                <h1>Horizons</h1>
-                <h3>Hooker Valley Track, New Zealand</h3>
+                <h2>Umroh Premium</h2>
+                <h1>Umroh</h1>
+                <h3>Explore the beauty of Umroh</h3>
               </div>
               <div className="hero-image hi-3"></div>
-            </article>
-            <article id="hero-4" style={{ "--i": 2 }}>
-              <div className="hero-info">
-                <h2>Explore and</h2>
-                <h1>Reflect</h1>
-                <h3>Dolmites, Italy</h3>
-              </div>
-              <div className="hero-image hi-4"></div>
-            </article>
-            <article id="hero-5" style={{ "--i": 1 }}>
-              <div className="hero-info">
-                <h2>Change Your</h2>
-                <h1>Perspective</h1>
-                <h3>Phuket, Thailand</h3>
-              </div>
-              <div className="hero-image hi-5"></div>
             </article>
           </main>
         </header>

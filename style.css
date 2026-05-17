@@ -261,11 +261,11 @@ main {
   z-index: 1;
 }
 
-.hi-1 { background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2070&q=80"); }
-.hi-2 { background-image: url("https://images.unsplash.com/photo-1517057011470-8f36d636e6ca?auto=format&fit=crop&w=2070&q=80"); }
-.hi-3 { background-image: url("https://images.unsplash.com/flagged/photo-1552035791-b3cc1632e933?auto=format&fit=crop&w=2069&q=80"); }
-.hi-4 { background-image: url("https://images.unsplash.com/photo-1574700273608-7962d3602a9f?auto=format&fit=crop&w=2070&q=80"); }
-.hi-5 { background-image: url("https://images.unsplash.com/photo-1605045544284-d13c6d6a60a6?auto=format&fit=crop&w=2070&q=80"); }
+.hi-1 { background-image: url("bali.jpg"); }
+.hi-2 { background-image: url("turki.jpg"); }
+.hi-3 { background-image: url("umroh.jpg"); }
+.hi-4 { background-image: url("bali.jpg"); }
+.hi-5 { background-image: url("turki.jpg"); }
 
 /* SECTION: Overlay Menu
 ----------------------------------------------- */
@@ -292,7 +292,7 @@ section.navbar-overlay-menu {
 
 .level-1 { display: grid; grid-template-columns: 65% 1fr; grid-auto-rows: min-content; grid-gap: 2em; }
 .level-1 h3 { font-weight: 600; font-size: 1.8rem; text-transform: uppercase; }
-.level-1 p { margin: 0.5em 0 0 0.5em; }
+.level-1 p { margin: 0.5em 0 0.5em; }
 .level-1 p small { font-size: 1rem; opacity: 0.5; cursor: pointer; }
 .level-1 p small:hover { opacity: 1; color: var(--red); }
 .level-1 ul > li { font-size: 1.2rem; padding: 0.3em; transition: color 0.3s; }
