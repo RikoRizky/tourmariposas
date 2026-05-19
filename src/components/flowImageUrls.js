@@ -1,20 +1,20 @@
 /** URL gambar flow (sama seperti index.html) */
 export const FLOW_PIN_IMAGES = [
-  "https://i.pinimg.com/1200x/6d/c1/51/6dc151fccad84848851615bf7fd5273e.jpg",
-  "https://i.pinimg.com/736x/86/5b/37/865b37c273ce08ccba905cfd5c43f7fd.jpg",
-  "https://i.pinimg.com/1200x/8d/ff/a1/8dffa167d7c06c98303cf74e1e684c0c.jpg",
-  "https://i.pinimg.com/1200x/7a/9d/b3/7a9db3f4a8c14244c9799897c5b27e15.jpg",
-  "https://i.pinimg.com/1200x/92/6a/f6/926af63e63524d0b2b5d4d29f8c2960f.jpg",
-  "https://i.pinimg.com/736x/3c/fd/40/3cfd40d9da71424ccfdb4a4f23d24b15.jpg",
-  "https://i.pinimg.com/736x/b3/a9/ea/b3a9eacf0a48d73daf7a9d99a641358d.jpg",
-  "https://i.pinimg.com/1200x/ea/7d/64/ea7d6422e60fd7d08a2f57e7a81f8db5.jpg",
-  "https://i.pinimg.com/1200x/df/e4/3e/dfe43e45689d1c604a3bdadc10ff6400.jpg",
-  "https://i.pinimg.com/1200x/83/a0/61/83a0611b7dffe9a845b371161da4a6ca.jpg",
-  "https://i.pinimg.com/736x/3b/30/71/3b30719fcf57e0fb4e4c7875c123be89.jpg",
-  "https://i.pinimg.com/1200x/e6/9e/b6/e69eb622ea968f2d107bc5bce20aab71.jpg",
-  "https://i.pinimg.com/1200x/b8/f8/a0/b8f8a07bb42de63c8a03c136457535d4.jpg",
-  "https://i.pinimg.com/1200x/ce/8d/c9/ce8dc976c68aae6e5b6bf13f0b563de7.jpg",
+  "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?q=80&w=800&auto=format&fit=crop", // Indonesia - Keindahan Gunung Bromo pagi hari
+  "https://plus.unsplash.com/premium_photo-1697730274057-19338e84db8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Umroh - Masjid Nabawi Madinah yang megah
+  "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=800&auto=format&fit=crop", // Turki - Balon udara Cappadocia yang estetik
+  "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=800&auto=format&fit=crop", // Indonesia - Suasana tropis Bali
+  "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop", // Umroh - Kabah di Masjidil Haram
+  "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=800&auto=format&fit=crop", // Turki - Hagia Sophia Istanbul yang ikonik
+  "https://images.unsplash.com/photo-1505993597083-3bd19fb75e57?q=80&w=800&auto=format&fit=crop", // Indonesia - Keindahan pulau Raja Ampat
+  "https://images.unsplash.com/photo-1604999333679-b86d54738315?q=80&w=800&auto=format&fit=crop", // Umroh - Suasana syahdu jamaah di Mekkah
+  "https://images.unsplash.com/photo-1685490844200-c27eb2f13ceb?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Turki - Pemandangan kota dan laut Istanbul
+  "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?q=80&w=800&auto=format&fit=crop", // Indonesia - Candi Borobudur yang magis
+  "https://images.unsplash.com/photo-1542856391-010fb87dcfed?q=80&w=800&auto=format&fit=crop", // Umroh - Sudut arsitektur Masjidil Haram
+  "https://images.unsplash.com/photo-1523496922380-91d5afba98a3?q=80&w=800&auto=format&fit=crop", // Turki - Pamukkale Thermal Pools yang putih bersih
+  "https://images.unsplash.com/photo-1501179691627-eeaa65ea017c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Indonesia - Sawah terasering Ubud Bali yang hijau
+  "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=800&auto=format&fit=crop", // Turki - Arsitektur Blue Mosque yang memukau
 ];
 
 export const FLOW_COVER_IMAGE =
-  "https://i.pinimg.com/1200x/a2/00/3f/a2003f95fde2cf6615a484ce3e43b33f.jpg";
+  "https://images.unsplash.com/photo-1704104501136-8f35402af395?q=80&w=1649&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Cover - Sudut cinematic emas Masjidil Haram Mekkah (High Resolution)
