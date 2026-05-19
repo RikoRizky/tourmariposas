@@ -215,7 +215,6 @@ export default function Testimoni() {
             Simak pengalaman spiritual langsung dari tanah suci. Kenyamanan ibadah
             Anda adalah amanah terbesar kami.
           </p>
-        </header>
 
         <div className="testimoni-filters" data-reveal>
           <button
@@ -301,6 +300,7 @@ export default function Testimoni() {
             </button>
           </div>
         )}
+        </header>
       </div>
 
       {modalNode}
