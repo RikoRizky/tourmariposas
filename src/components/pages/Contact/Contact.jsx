@@ -5,29 +5,31 @@ import "./Contact.css";
 
 const contactCards = [
   {
+    icon: "👤",
+    title: "Direktur",
+    content: "Arum Ita Cahyani",
+  },
+  {
     icon: "📍",
     title: "Office Address",
-    content:
-      "Pasar Modern Paramount U35, Gading Serpong, Tangerang, Indonesia",
+    content: "Pasar Modern Paramount U35, Gading Serpong, Tangerang",
   },
   {
     icon: "📞",
     title: "Phone Number",
-    content: "+62 812 2320 9190",
-    href: "tel:+6281223209190",
+    content: (
+      <>
+        <a href="tel:+6281315499154">0813-1549-9154</a>
+        <br />
+        <a href="tel:+62905513869855">+90 5513-8698-55</a>
+      </>
+    ),
   },
   {
     icon: "✉",
     title: "Email Address",
     content: "mariposasindonesia@gmail.com",
     href: "mailto:mariposasindonesia@gmail.com",
-  },
-  {
-    icon: "📸",
-    title: "Instagram",
-    content: "@mariposas_indonesia",
-    href: "https://www.instagram.com/mariposas_indonesia?igsh=MWNtaXI1ZHQwbjFkNw==",
-    external: true,
   },
 ];
 
@@ -50,7 +52,7 @@ export default function Contact() {
       <div className="contact-header">
         <p data-reveal>CONTACT US</p>
         <h1 data-reveal>
-          Let&apos;s Plan Your
+          Let's Plan Your
           <span> Dream Journey</span>
         </h1>
         <h3 data-reveal>
