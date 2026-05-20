@@ -82,19 +82,17 @@
 /* Tombol Burger - dipastikan selalu tampil */
 .modern-nav .nav-menu-toggle {
   display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  border: none;
-  background: transparent;
-  padding: 12px 8px;
-  margin: -8px 0;
   flex-direction: column;
-  justify-content: space-between;
-  width: 26px;
-  height: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.2s;
+  transition: all 0.25s ease;
 }
 
 .modern-nav .nav-menu-toggle:active {
@@ -605,9 +603,13 @@
     padding: 0 16px;
   }
 
+  .modern-nav .nav-center {
+    display: none !important;
+  }
+
   .brand-logo {
-    width: 32px;
-    height: 32px;
+    width: 100px;
+    height: 100px;
   }
 
   .brand-text h1 {
