@@ -5,26 +5,26 @@ import { openWhatsApp } from "../../../utils/whatsapp.js";
 import { TOURS_FILTER_EVENT } from "../../../utils/toursFilter.js";
 import "./Tours.css";
 
-import umh1 from "./umh1.PNG";
-import umh2 from "./umh2.PNG";
-import umh3 from "./umh3.PNG";
-import umh4 from "./umh4.PNG";
-import umh5 from "./umh5.PNG";
-import umh6 from "./umh6.PNG";
-import umh7 from "./umh7.PNG";
-import umh8 from "./umh8.PNG";
-import umh9 from "./umh9.PNG";
-import umh10 from "./umh10.PNG";
-import umh11 from "./umh11.PNG";
-import umh12 from "./umh12.PNG";
-import umh13 from "./umh13.PNG";
-import umh14 from "./umh14.PNG";
-import umh15 from "./umh15.PNG";
-import umh16 from "./umh16.PNG";
-import tky1 from "./tky1.PNG";
-import tky2 from "./tky2.PNG";
-import tky3 from "./tky3.PNG";
-import tky4 from "./tky4.PNG";
+import umh1 from "./umh1.jpeg";
+import umh2 from "./umh2.jpeg";
+import umh3 from "./umh3.jpeg";
+import umh4 from "./umh4.jpeg";
+import umh5 from "./umh5.jpeg";
+import umh6 from "./umh6.jpeg";
+import umh7 from "./umh7.jpeg";
+import umh8 from "./umh8.jpeg";
+import umh9 from "./umh9.jpeg";
+import umh10 from "./umh10.jpeg";
+import umh11 from "./umh11.jpeg";
+import umh12 from "./umh12.jpeg";
+import umh13 from "./umh13.jpeg";
+import umh14 from "./umh14.jpeg";
+import umh15 from "./umh15.jpeg";
+import umh16 from "./umh16.jpeg";
+import tky1 from "./tky1.jpeg";
+import tky2 from "./tky2.jpeg";
+import tky3 from "./tky3.jpeg";
+import tky4 from "./tky4.jpeg";
 
 const categories = ["Semua Paket", "Umroh", "Indonesia", "Turkey"];
 const INITIAL_VISIBLE = 6;
@@ -54,10 +54,10 @@ const toursData = [
   { id: 14, category: "Umroh", title: "Umroh VIP Executive", duration: "9 Hari", price: 39500000, image: umh14 },
   { id: 15, category: "Umroh", title: "Umroh Family Package", duration: "12 Hari", price: 35200000, image: umh15 },
   { id: 16, category: "Umroh", title: "Umroh Premium Plus", duration: "14 Hari", price: 37800000, image: umh16 },
-  { id: 17, category: "Turkey", title: "Umroh Premium Plus", duration: "14 Hari", price: 42900000, image: tky1 },
-  { id: 18, category: "Turkey", title: "Umroh Premium Plus", duration: "14 Hari", price: 42900000, image: tky2 },
-  { id: 19, category: "Turkey", title: "Umroh Premium Plus", duration: "14 Hari", price: 42900000, image: tky3 },
-  { id: 20, category: "Turkey", title: "Umroh Premium Plus", duration: "14 Hari", price: 42900000, image: tky4 },
+  { id: 17, category: "Turkey", title: "Paket Turki Eksklusif", duration: "14 Hari", price: 42900000, image: tky1 },
+  { id: 18, category: "Turkey", title: "Turki Muslim Friendly", duration: "14 Hari", price: 42900000, image: tky2 },
+  { id: 19, category: "Turkey", title: "Turki Bosphorus Tour", duration: "14 Hari", price: 42900000, image: tky3 },
+  { id: 20, category: "Turkey", title: "Turki Cappadocia", duration: "14 Hari", price: 42900000, image: tky4 },
 ];
 
 export default function Tours() {
@@ -212,8 +212,9 @@ export default function Tours() {
         ))}
       </div>
 
-      {hasMoreTours && (
-        <div className="tours-show-more-wrap" data-reveal ref={showMoreWrapRef}>
+      {/* ========== PERBAIKAN DI SINI ========== */}
+      <div className="tours-show-more-wrap" data-reveal ref={showMoreWrapRef}>
+        {hasMoreTours ? (
           <button
             type="button"
             className="tours-show-more-btn"
@@ -221,8 +222,13 @@ export default function Tours() {
           >
             {showAll ? "Tampilkan lebih sedikit" : "Lihat selengkapnya"}
           </button>
-        </div>
-      )}
+        ) : (
+          <p className="tours-all-shown-message">
+            ✨ Semua paket {activeCategory !== "Semua Paket" ? `pada kategori ${activeCategory}` : ""} sudah ditampilkan
+          </p>
+        )}
+      </div>
+      {/* ===================================== */}
 
       <div className="tour-help" data-reveal>
         <div className="help-left">
