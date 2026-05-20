@@ -5,29 +5,31 @@ import "./Contact.css";
 
 const contactCards = [
   {
-    icon: "👤",
-    title: "Direktur",
-    content: "Arum Ita Cahyani",
+    icon: "📍",
+    title: "Lokasi Kantor",
+    content: "Pasar Modern Paramount U35, Gading Serpong, Tangerang, Indonesia",
+    href: "https://www.google.com/maps/place/PASAR+MODERN+PARAMOUNT/@-6.248964,106.622918,16z/data=!4m6!3m5!1s0x2e69fc73f1f858ff:0x9483c141a6abb292!8m2!3d-6.2489644!4d106.6229183!16s%2Fg%2F11b6_fkm69?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D",
   },
   {
-    icon: "📍",
-    title: "Office Address",
-    content: "Pasar Modern Paramount U35, Gading Serpong, Tangerang",
+    icon: "📷",
+    title: "Instagram",
+    content: "@mariposas_indonesia",
+    href: "https://www.instagram.com/mariposas_indonesia?igsh=MWNtaXI1ZHQwbjFkNw==",
   },
   {
     icon: "📞",
-    title: "Phone Number",
+    title: "Nomor Telepon",
     content: (
       <>
-        <a href="tel:+6281315499154">0813-1549-9154</a>
+        <a href="tel:+6281315499154">+62 813-1549-9154</a>
         <br />
         <a href="tel:+62905513869855">+90 5513-8698-55</a>
       </>
     ),
   },
   {
-    icon: "✉",
-    title: "Email Address",
+    icon: "📧",
+    title: "Email",
     content: "mariposasindonesia@gmail.com",
     href: "mailto:mariposasindonesia@gmail.com",
   },
@@ -65,7 +67,7 @@ export default function Contact() {
         <form className="contact-form" data-reveal onSubmit={handleSubmit}>
           <h2>Kirim Pesan</h2>
           <p className="contact-form-desc">
-            Isi formulir singkat ini—tim kami akan merespons secepatnya.
+            Isi formulir singkat ini. Tim kami akan merespons secepatnya.
           </p>
 
           <label>

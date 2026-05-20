@@ -11,28 +11,28 @@ const MENU_EASE = "power4.inOut";
 
 const MEGA_PACKAGES = [
   {
+    title: "Tur Internasional",
+    desc: "Destinasi & petualangan di seluruh dunia",
+    tourFilter: "Semua Paket",
+    icon: "inter",
+  },
+  {
     title: "Paket Indonesia",
     desc: "Jelajahi candi, pantai & budaya",
     tourFilter: "Indonesia",
-    icon: "bus",
+    icon: "indo",
   },
   {
     title: "Paket Umroh",
     desc: "Paket ibadah lengkap dengan bimbingan",
     tourFilter: "Umroh",
-    icon: "moon",
+    icon: "umroh",
   },
   {
     title: "Paket Turki",
     desc: "Istanbul, Cappadocia & sekitarnya",
     tourFilter: "Turkey",
     icon: "turkey",
-  },
-  {
-    title: "Tur Internasional",
-    desc: "Destinasi & petualangan di seluruh dunia",
-    tourFilter: "Semua Paket",
-    icon: "plane",
   },
 ];
 
@@ -65,36 +65,35 @@ const MEGA_RECENT_TOURS = [
 
 // Diganti dengan pengalaman yang akan didapatkan
 const MEGA_RESOURCES = [
-  { label: "Pengalaman Budaya Lokal", href: "#tours", icon: "culture", tourFilter: "Indonesia" },
-  { label: "Kuliner Nusantara & Halal", href: "#tours", icon: "food", tourFilter: "Indonesia" },
-  { label: "Akomodasi Premium & Nyaman", href: "#tours", icon: "hotel", tourFilter: "Semua Paket" },
-  { label: "Pemandu Wisata Berpengalaman", href: "#tours", icon: "guide", tourFilter: "Semua Paket" },
-  { label: "Dokumentasi & Spot Foto Instagramable", href: "#tours", icon: "camera", tourFilter: "Semua Paket" },
-  { label: "Kenyamanan Ibadah (Umroh)", href: "#tours", icon: "kaaba", tourFilter: "Umroh" },
+  { label: "Pengalaman Budaya Lokal", icon: "culture", },
+  { label: "Kuliner Nusantara & Halal",  icon: "food", },
+  { label: "Akomodasi Premium & Nyaman", icon: "hotel", },
+  { label: "Pemandu Wisata Berpengalaman", icon: "guide", },
+  { label: "Dokumentasi & Spot Foto Instagramable", icon: "camera", },
+  { label: "Kenyamanan Ibadah (Umroh)", icon: "kaaba", },
 ];
 
 function PackageIcon({ type }) {
   const icons = {
-    bus: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-        <rect x="3" y="6" width="18" height="11" rx="2" />
-        <path d="M3 11h18M7 17v2M17 17v2M7 6V4M17 6V4" />
-      </svg>
+    inter: (
+      <span className="package-flag" aria-hidden="true">
+        🌏
+      </span>
     ),
-    moon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
-      </svg>
+    indo: (
+      <span className="package-flag" aria-hidden="true">
+        🇮🇩
+      </span>
+    ),
+    umroh: (
+      <span className="package-flag" aria-hidden="true">
+        🇸🇦
+      </span>
     ),
     turkey: (
       <span className="package-flag" aria-hidden="true">
         🇹🇷
       </span>
-    ),
-    plane: (
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M10.18 9 2 4v2l8 2.5L2 11v2l8-2.5L2 16v2l10.18-5L22 20V4l-11.82 5z" />
-      </svg>
     ),
   };
   return <span className={`package-icon package-icon--${type}`}>{icons[type]}</span>;
@@ -599,7 +598,7 @@ export function Navbar({ hidden = true }) {
             </section>
 
             <section className="menu-panel mega-section mega-recent">
-              <h3 className="mega-heading">Tur yang Baru Dilihat</h3>
+              <h3 className="mega-heading">Banyak orang cari</h3>
               <div className="mega-tour-cards">
                 {MEGA_RECENT_TOURS.map((tour) => (
                   <article key={tour.title} className="mega-tour-card">
