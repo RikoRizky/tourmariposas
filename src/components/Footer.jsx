@@ -115,7 +115,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="tel:+6281223209190">+62 812 2320 9190</a>
+              <a href="tel:+6281315499154">0813-1549-9154</a>
+              <br />
+              <a href="tel:+62905513869855">+90 5513-8698-55</a>
             </li>
           </ul>
         </div>
