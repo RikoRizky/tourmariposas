@@ -596,35 +596,26 @@
   }
 }
 
-/* Perangkat sangat kecil (max 480px) */
+/* Perangkat sangat kecil (max 480px) - TOMBOL BURGER TETAP TERLIHAT */
 @media (max-width: 480px) {
   .modern-nav {
     height: 68px;
     padding: 0 16px;
   }
 
-  .modern-nav .nav-center {
-    display: none !important;
-  }
-
-  .brand-logo {
-    width: 100px;
-    height: 100px;
-  }
-
-  .brand-text h1 {
-    font-size: 0.9rem;
-  }
-
-  .brand-text p {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
+  /* Logo tidak diubah ukurannya (tetap seperti semula) */
+  /* Hanya pastikan area kanan (nav-right) tidak menyembunyikan burger */
+  .modern-nav .nav-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
 
   .modern-nav .nav-menu-toggle {
-    width: 24px;
-    height: 16px;
-    padding: 10px 6px;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    flex-shrink: 0;
   }
 
   .modern-nav .nav-menu-toggle span {
@@ -632,11 +623,11 @@
   }
 
   .modern-nav .nav-menu-toggle.active span:nth-child(1) {
-    transform: translateY(6.75px) rotate(45deg);
+    transform: translateY(7.5px) rotate(45deg);
   }
 
   .modern-nav .nav-menu-toggle.active span:nth-child(3) {
-    transform: translateY(-6.75px) rotate(-45deg);
+    transform: translateY(-7.5px) rotate(-45deg);
   }
 
   .navbar-overlay-menu {
@@ -711,5 +702,3 @@
     display: none !important;
   }
 }
-
-

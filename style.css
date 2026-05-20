@@ -95,7 +95,7 @@ header {
 
 .brand-logo {
   position: absolute;
-  left: -20px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   height: 130px;
@@ -378,8 +378,8 @@ section.navbar-overlay-menu {
   }
 
   .brand-logo {
-    height: 75px;
-    left: -10px;
+    height: 100px;
+    left: -15px;
   }
 
   .brand-text h1 {
