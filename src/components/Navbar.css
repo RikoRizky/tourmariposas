@@ -1,5 +1,4 @@
-/* Navbar enhancements — does not affect landing / preloader / destination */
-
+/* ===== Gaya Dasar Navbar ===== */
 .modern-nav {
   height: 76px;
   padding: 0 28px 0 24px;
@@ -41,8 +40,8 @@
 }
 
 .modern-nav .nav-center {
-  display: flex;         
-  align-items: center;    
+  display: flex;
+  align-items: center;
   justify-content: center;
   gap: 6px;
   background: #f1f5f9;
@@ -80,17 +79,26 @@
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
 }
 
-/* Burger Button - Tampil secara default di desktop berdampingan dengan Book Now */
+/* Tombol Burger - dipastikan selalu tampil */
 .modern-nav .nav-menu-toggle {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   border: none;
   background: transparent;
-  padding: 0;
-  display: flex; 
+  padding: 12px 8px;
+  margin: -8px 0;
   flex-direction: column;
   justify-content: space-between;
   width: 26px;
   height: 18px;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.modern-nav .nav-menu-toggle:active {
+  background: rgba(37, 99, 235, 0.1);
 }
 
 .modern-nav .nav-menu-toggle span {
@@ -102,7 +110,6 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Burger active animation state */
 .modern-nav .nav-menu-toggle.active span:nth-child(1) {
   transform: translateY(7.5px) rotate(45deg);
 }
@@ -115,33 +122,7 @@
   transform: translateY(-7.5px) rotate(-45deg);
 }
 
-.nav-overlay-close {
-  position: fixed;
-  top: 28px;
-  right: 28px;
-  z-index: 10001;
-  width: 52px;
-  height: 52px;
-  border: none;
-  border-radius: 50%;
-  background: #2563eb;
-  color: #ffffff;
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-
-.nav-overlay-close:hover {
-  transform: scale(1.08);
-  background: #1d4ed8;
-}
-
-/* Overlay — slide dari bawah ke atas */
+/* Overlay Menu */
 .navbar-overlay-menu {
   position: fixed;
   top: 0;
@@ -152,12 +133,12 @@
   display: none;
   z-index: 10000;
   pointer-events: none;
-  padding: 120px 5% 48px;
+  padding: 100px 4% 0;
   overflow: hidden;
   clip-path: none !important;
-  background: linear-gradient(165deg, #f8fafc 0%, #ffffff 45%, #eff6ff 100%);
+  background: #eef1f6;
   background-image:
-    linear-gradient(165deg, #f8fafc 0%, #ffffff 45%, #eff6ff 100%),
+    linear-gradient(180deg, #f4f6fa 0%, #eef1f6 100%),
     url("https://www.transparenttextures.com/patterns/church.png");
   background-blend-mode: normal, multiply;
   will-change: transform;
@@ -168,147 +149,565 @@
 }
 
 .navbar-overlay-menu .menu-inner {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
+  scrollbar-width: thin;
 }
 
-.navbar-overlay-menu .level-1 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem 3rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  align-content: start;
-}
-
-.navbar-overlay-menu .level-1 h3 {
-  font-size: 1.35rem;
+.mega-heading {
+  margin: 0 0 1.1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: #0f172a;
-  margin-bottom: 0.75rem;
 }
 
-.navbar-overlay-menu .level-1 > li > ul > li,
-.navbar-overlay-menu .level-1 > li > ul > li a {
-  font-size: 1.05rem;
-  line-height: 1.5;
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem 2.75rem;
+  flex: 1;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.mega-section {
+  min-width: 0;
+}
+
+/* Package Items */
+.mega-package-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.mega-package-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+
+.package-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+.package-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.package-icon--moon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.package-icon--plane {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.package-flag {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.mega-package-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.mega-package-copy strong {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #0f172a;
+}
+
+.mega-package-copy span {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.mega-btn-view {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.mega-btn-view:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Destinasi */
+.mega-destination-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 1.25rem;
+  align-items: flex-end;
+}
+
+.mega-destination-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  min-width: 120px;
+}
+
+.mega-destination-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  font-size: 1.75rem;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
+}
+
+.mega-destination-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 140px;
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2b59c3 0%, #1d4ed8 100%);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mega-destination-pill:hover .mega-destination-label {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 4px rgba(147, 197, 253, 0.55),
+    0 10px 28px rgba(37, 99, 235, 0.4);
+}
+
+/* Kartu Tur */
+.mega-tour-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mega-tour-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+}
+
+.mega-tour-card-image-wrap {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.mega-tour-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.mega-tour-card:hover .mega-tour-card-image-wrap img {
+  transform: scale(1.04);
+}
+
+.mega-tour-card-body {
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.mega-tour-card-body h4 {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.mega-tour-card-body p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.mega-tour-book {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+
+.mega-tour-book:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Pengalaman (Resource) */
+.mega-resource-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.5rem;
+}
+
+.mega-resource-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.35rem 0;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: #334155;
+  text-decoration: none;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.navbar-overlay-menu .level-1 > li > ul > li a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 0.2em 0;
-}
-
-.navbar-overlay-menu .level-1 > li > ul > li a:hover,
-.navbar-overlay-menu .level-1 p small a:hover {
+.mega-resource-list a:hover {
   color: #2563eb;
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
-.navbar-overlay-menu .level-1 p small a {
-  color: #94a3b8;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.25s ease;
-}
-
-.navbar-overlay-menu .level-1 > li > ul > li:hover {
+.resource-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
   color: #2563eb;
 }
 
-.modern-nav.nav-visible {
-  pointer-events: auto;
+.resource-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
-/* Mobile overlay — blue pills instead of gold */
-.navbar-overlay-menu .level-3 {
+/* Navigasi Mobile (diperbaiki jadi tombol-tombol rapi) */
+.mega-mobile-nav {
+  display: none;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.8rem;
+  backdrop-filter: blur(8px);
+}
+
+.mega-mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 0;
+  gap: 0.8rem 1.2rem;
+  justify-content: center;
+}
+
+.mega-mobile-links li {
   margin: 0;
-  list-style: none;
 }
 
-.navbar-overlay-menu .level-3 li {
-  list-style: none;
-  padding: 0 !important;
-}
-
-.navbar-overlay-menu .level-3 li a {
+.mega-mobile-links a {
   display: inline-block;
-  padding: 0.55em 1.1em !important;
-  background: #dbeafe !important;
-  color: #1e40af !important;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  border-radius: 999px;
-  font-size: 0.95rem !important;
+  padding: 0.6rem 1.2rem;
+  background: #ffffff;
+  border-radius: 40px;
   font-weight: 600;
+  color: #1e293b;
   text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
 }
 
-.navbar-overlay-menu .level-3 li a:hover {
-  background: #2563eb !important;
-  color: #ffffff !important;
+.mega-mobile-links a:hover,
+.mega-mobile-links a:active {
+  background: #2563eb;
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
 }
 
-.navbar-overlay-menu .mobile-only-nav a {
-  color: #2563eb;
-  font-weight: 600;
+.nav-cta-mobile-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
-/* --- MEDIA QUERIES RESPONSIVE --- */
+.nav-cta-mobile-wrapper .nav-cta {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  padding: 0.7rem 1.8rem !important;
+  border-radius: 40px;
+  font-size: 1rem;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
 
-/* Tampilan Mobile & Tablet (Maksimal 1100px) */
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet dan Mobile Lebar (max 1100px) */
 @media (max-width: 1100px) {
   .navbar-overlay-menu {
-    padding: 100px 6% 32px;
+    padding: 96px 5% 0;
   }
 
-  .navbar-overlay-menu .level-1 {
+  .mega-mobile-nav {
+    display: block;
+  }
+
+  .mega-menu-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .modern-nav .nav-center {
-    display: none !important; /* Hilangkan seluruh menu tengah desktop */
+  .mega-tour-cards {
+    grid-template-columns: 1fr;
   }
 
-  .navbar-overlay-menu .nav-cta-mobile-wrapper {
-    margin-top: 16px;
-    list-style: none;
-    display: block;
-  }
-
-  .navbar-overlay-menu .nav-cta-mobile-wrapper .nav-cta {
-    display: inline-flex;
+  .mega-destination-pills {
     justify-content: center;
-    align-items: center;
-    width: auto;
-    min-width: 140px;
-    padding: 10px 24px !important;
-    margin-left: 0;
-    font-size: 0.95rem;
+  }
+
+  .mega-package-row {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .mega-package-row .mega-btn-view {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 0.25rem;
+  }
+
+  .modern-nav .nav-center {
+    display: none !important;
   }
 }
 
-/* Tampilan Desktop Murni (Minimal 1101px) */
+/* Perangkat maksimal 720px */
+@media (max-width: 720px) {
+  .mega-resource-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mega-tour-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-overlay-menu {
+    padding: 88px 4% 0;
+  }
+
+  .mega-heading {
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .mega-package-row {
+    padding: 0.7rem 0.85rem;
+    gap: 0.75rem;
+  }
+
+  .mega-package-copy strong {
+    font-size: 0.85rem;
+  }
+
+  .mega-package-copy span {
+    font-size: 0.75rem;
+  }
+
+  .mega-destination-pill {
+    min-width: 100px;
+  }
+
+  .mega-destination-label {
+    min-width: 110px;
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .mega-tour-card-body {
+    padding: 0.7rem 0.85rem 0.9rem;
+  }
+
+  .mega-mobile-links {
+    gap: 0.6rem;
+  }
+
+  .mega-mobile-links a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Perangkat sangat kecil (max 480px) */
+@media (max-width: 480px) {
+  .modern-nav {
+    height: 68px;
+    padding: 0 16px;
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-text h1 {
+    font-size: 0.9rem;
+  }
+
+  .brand-text p {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .modern-nav .nav-menu-toggle {
+    width: 24px;
+    height: 16px;
+    padding: 10px 6px;
+  }
+
+  .modern-nav .nav-menu-toggle span {
+    height: 2.5px;
+  }
+
+  .modern-nav .nav-menu-toggle.active span:nth-child(1) {
+    transform: translateY(6.75px) rotate(45deg);
+  }
+
+  .modern-nav .nav-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6.75px) rotate(-45deg);
+  }
+
+  .navbar-overlay-menu {
+    padding: 80px 3% 0;
+  }
+
+  .mega-menu-grid {
+    gap: 1.5rem;
+  }
+
+  .mega-package-row {
+    grid-template-columns: auto 1fr;
+    gap: 0.6rem;
+  }
+
+  .package-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .package-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .mega-btn-view {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .mega-destination-flag {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .mega-destination-label {
+    min-width: 90px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .mega-tour-card-image-wrap {
+    aspect-ratio: 16 / 9;
+  }
+
+  .mega-tour-card-body h4 {
+    font-size: 0.8rem;
+  }
+
+  .mega-tour-card-body p {
+    font-size: 0.7rem;
+  }
+
+  .mega-resource-list a {
+    font-size: 0.85rem;
+    gap: 0.5rem;
+  }
+}
+
+/* Desktop (min 1101px) */
 @media (min-width: 1101px) {
   .modern-nav .nav-center {
-    display: flex !important; /* Pastikan menu tengah + Book Now desktop menyala */
+    display: flex !important;
+  }
+
+  .mega-mobile-nav {
+    display: none !important;
   }
 
   .nav-cta-mobile-wrapper {
-    display: none !important; /* Sembunyikan pembungkus cta mobile di desktop */
+    display: none !important;
   }
 }
+
+

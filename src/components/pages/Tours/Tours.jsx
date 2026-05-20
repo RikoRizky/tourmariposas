@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ImageLightbox } from "../../ImageLightbox.jsx";
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 import { openWhatsApp } from "../../../utils/whatsapp.js";
+import { TOURS_FILTER_EVENT } from "../../../utils/toursFilter.js";
 import "./Tours.css";
 
 import umh1 from "./umh1.PNG";
@@ -84,6 +85,18 @@ export default function Tours() {
   useEffect(() => {
     setShowAll(false);
   }, [activeCategory]);
+
+  useEffect(() => {
+    const onFilter = (e) => {
+      const category = e.detail?.category;
+      if (!category || !categories.includes(category)) return;
+      setActiveCategory(category);
+      setShowAll(false);
+    };
+
+    window.addEventListener(TOURS_FILTER_EVENT, onFilter);
+    return () => window.removeEventListener(TOURS_FILTER_EVENT, onFilter);
+  }, []);
 
   useLayoutEffect(() => {
     const anchorTop = collapseScrollAnchorRef.current;
