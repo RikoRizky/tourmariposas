@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "6281223209190";
+const WHATSAPP_NUMBER = "6281315499154";
 
 export function buildWhatsAppUrl(packageName, customMessage) {
   const text =

@@ -6,28 +6,32 @@ import "./Contact.css";
 const contactCards = [
   {
     icon: "📍",
-    title: "Office Address",
-    content:
-      "Pasar Modern Paramount U35, Gading Serpong, Tangerang, Indonesia",
+    title: "Lokasi Kantor",
+    content: "Pasar Modern Paramount U35, Gading Serpong, Tangerang, Indonesia",
+    href: "https://www.google.com/maps/place/PASAR+MODERN+PARAMOUNT/@-6.248964,106.622918,16z/data=!4m6!3m5!1s0x2e69fc73f1f858ff:0x9483c141a6abb292!8m2!3d-6.2489644!4d106.6229183!16s%2Fg%2F11b6_fkm69?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D",
   },
   {
-    icon: "📞",
-    title: "Phone Number",
-    content: "+62 812 2320 9190",
-    href: "tel:+6281223209190",
-  },
-  {
-    icon: "✉",
-    title: "Email Address",
-    content: "mariposasindonesia@gmail.com",
-    href: "mailto:mariposasindonesia@gmail.com",
-  },
-  {
-    icon: "📸",
+    icon: "📷",
     title: "Instagram",
     content: "@mariposas_indonesia",
     href: "https://www.instagram.com/mariposas_indonesia?igsh=MWNtaXI1ZHQwbjFkNw==",
-    external: true,
+  },
+  {
+    icon: "📞",
+    title: "Nomor Telepon",
+    content: (
+      <>
+        <a href="tel:+6281315499154">+62 813-1549-9154</a>
+        <br />
+        <a href="tel:+62905513869855">+90 5513-8698-55</a>
+      </>
+    ),
+  },
+  {
+    icon: "📧",
+    title: "Email",
+    content: "mariposasindonesia@gmail.com",
+    href: "mailto:mariposasindonesia@gmail.com",
   },
 ];
 
@@ -50,7 +54,7 @@ export default function Contact() {
       <div className="contact-header">
         <p data-reveal>CONTACT US</p>
         <h1 data-reveal>
-          Let&apos;s Plan Your
+          Let's Plan Your
           <span> Dream Journey</span>
         </h1>
         <h3 data-reveal>
@@ -63,7 +67,7 @@ export default function Contact() {
         <form className="contact-form" data-reveal onSubmit={handleSubmit}>
           <h2>Kirim Pesan</h2>
           <p className="contact-form-desc">
-            Isi formulir singkat ini—tim kami akan merespons secepatnya.
+            Isi formulir singkat ini. Tim kami akan merespons secepatnya.
           </p>
 
           <label>
