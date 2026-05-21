@@ -9,6 +9,7 @@ import { LandingPageContent } from "./components/LandingPageContent.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 import Destination from "./components/pages/Destination/Destination.jsx";
 import Tours from "./components/pages/Tours/Tours.jsx";
+import Testimoni from "./components/pages/Testimoni/Testimoni.jsx";
 import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
 import Footer from "./components/Footer.jsx";
@@ -172,6 +173,7 @@ export default function App() {
       <About />
       <Destination />
       <Tours />
+      <Testimoni />
       <Contact />
       <Footer />
     </>
