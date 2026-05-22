@@ -8,6 +8,19 @@ export function buildWhatsAppUrl(packageName, customMessage) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
-export function openWhatsApp(packageName, customMessage) {
-  window.open(buildWhatsAppUrl(packageName, customMessage), "_blank", "noopener,noreferrer");
+export function openWhatsApp(packageNameOrMessage, customMessage) {
+  let finalMessage;
+  
+  if (customMessage) {
+    // If customMessage is provided, use it as is
+    finalMessage = customMessage;
+  } else if (packageNameOrMessage.includes("Halo Mariposas Tour")) {
+    // If packageNameOrMessage is already a complete message, use it as is
+    finalMessage = packageNameOrMessage;
+  } else {
+    // Otherwise, it's a package name, apply the default template
+    finalMessage = `Halo Mariposas Tour, saya tertarik dan ingin memesan ${packageNameOrMessage}. Boleh minta informasi lebih lanjut?`;
+  }
+  
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(finalMessage)}`, "_blank", "noopener,noreferrer");
 }

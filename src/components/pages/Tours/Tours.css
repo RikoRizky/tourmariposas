@@ -368,43 +368,46 @@
   margin:18px 0;
 }
 
-.tour-price-item{
-  background:#f8f8f8;
-  border-radius:14px;
-  padding:12px 8px;
-  text-align:center;
+button.tour-price-item{
+  border: 1px solid transparent;
+  background: #f8f8f8;
+  border-radius: 16px;
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #111;
 }
 
-.tour-price-item span{
+button.tour-price-item:hover {
+  transform: translateY(-1px);
+  background: #edf2ff;
+  border-color: #c7d2fe;
+}
+
+button.tour-price-item.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+button.tour-price-item span{
   display:block;
   font-size:12px;
-  color:#777;
+  color:#bf0c0c;
   margin-bottom:4px;
 }
 
-.tour-price-item strong{
+button.tour-price-item strong{
   font-size:18px;
-  color:#e53935;
+  color:#646464;
 }
 
-.tour-single-supp{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding-top:12px;
-  margin-bottom:18px;
-  border-top:1px solid #eee;
+.tour-price-item.active strong {
+  color: #ffffff;
 }
 
-.tour-single-supp span{
-  color:#666;
-  font-size:14px;
-}
 
-.tour-single-supp strong{
-  font-size:18px;
-  color:#111;
-}
 
 @media (max-width:768px){
 

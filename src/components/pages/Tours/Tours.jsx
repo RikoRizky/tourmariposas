@@ -27,7 +27,13 @@ import tky2 from "./tky2.jpeg";
 import tky3 from "./tky3.jpeg";
 import tky4 from "./tky4.jpeg";
 
-const categories = ["Semua Paket", "Umroh", "Indonesia", "Turkey"];
+const categories = [
+  "Semua Paket",
+  "Umroh",
+  "Indonesia",
+  "Turkey",
+  "Turki Plus",
+];
 
 const INITIAL_VISIBLE = 6;
 
@@ -48,7 +54,6 @@ const toursData = [
     price: 38500000,
     image: umh1,
   },
-
   {
     id: 2,
     category: "Umroh",
@@ -57,7 +62,6 @@ const toursData = [
     price: 42500000,
     image: umh2,
   },
-
   {
     id: 3,
     category: "Umroh",
@@ -66,7 +70,6 @@ const toursData = [
     price: 52000000,
     image: umh3,
   },
-
   {
     id: 4,
     category: "Umroh",
@@ -75,7 +78,6 @@ const toursData = [
     price: 29800000,
     image: umh4,
   },
-
   {
     id: 5,
     category: "Umroh",
@@ -84,7 +86,6 @@ const toursData = [
     price: 36500000,
     image: umh5,
   },
-
   {
     id: 6,
     category: "Umroh",
@@ -93,7 +94,6 @@ const toursData = [
     price: 27500000,
     image: umh6,
   },
-
   {
     id: 7,
     category: "Umroh",
@@ -102,7 +102,6 @@ const toursData = [
     price: 45800000,
     image: umh7,
   },
-
   {
     id: 8,
     category: "Umroh",
@@ -111,7 +110,6 @@ const toursData = [
     price: 33500000,
     image: umh8,
   },
-
   {
     id: 9,
     category: "Umroh",
@@ -120,7 +118,6 @@ const toursData = [
     price: 48900000,
     image: umh9,
   },
-
   {
     id: 10,
     category: "Umroh",
@@ -129,7 +126,6 @@ const toursData = [
     price: 41200000,
     image: umh10,
   },
-
   {
     id: 11,
     category: "Umroh",
@@ -138,7 +134,6 @@ const toursData = [
     price: 44500000,
     image: umh11,
   },
-
   {
     id: 12,
     category: "Umroh",
@@ -147,7 +142,6 @@ const toursData = [
     price: 31800000,
     image: umh12,
   },
-
   {
     id: 13,
     category: "Umroh",
@@ -156,7 +150,6 @@ const toursData = [
     price: 46800000,
     image: umh13,
   },
-
   {
     id: 14,
     category: "Umroh",
@@ -165,7 +158,6 @@ const toursData = [
     price: 39500000,
     image: umh14,
   },
-
   {
     id: 15,
     category: "Umroh",
@@ -174,7 +166,6 @@ const toursData = [
     price: 35200000,
     image: umh15,
   },
-
   {
     id: 16,
     category: "Umroh",
@@ -183,7 +174,6 @@ const toursData = [
     price: 37800000,
     image: umh16,
   },
-
   {
     id: 17,
     category: "Turkey",
@@ -192,7 +182,6 @@ const toursData = [
     price: 42900000,
     image: tky1,
   },
-
   {
     id: 18,
     category: "Turkey",
@@ -201,7 +190,6 @@ const toursData = [
     price: 42900000,
     image: tky2,
   },
-
   {
     id: 19,
     category: "Turkey",
@@ -210,7 +198,6 @@ const toursData = [
     price: 42900000,
     image: tky3,
   },
-
   {
     id: 20,
     category: "Turkey",
@@ -219,16 +206,13 @@ const toursData = [
     price: 42900000,
     image: tky4,
   },
-
-  /* ================= TAMBAHAN BARU ================= */
-
   {
     id: 21,
-    category: "Turkey",
+    category: "Turki Plus",
     title: "2N3D Istanbul + Bursa Tour",
     duration: "2N3D",
     image: tky1,
-
+    photoOptions: [tky1, tky2, tky3, tky4, tky1, tky2],
     prices: [
       { pax: "15", price: "$150" },
       { pax: "20", price: "$135" },
@@ -236,18 +220,16 @@ const toursData = [
       { pax: "30", price: "$120" },
       { pax: "35", price: "$115" },
       { pax: "40", price: "$110" },
+      { pax: "Single Supplement", price: "$75" },
     ],
-
-    singleSupp: "$75",
   },
-
   {
     id: 22,
-    category: "Turkey",
+    category: "Turki Plus",
     title: "3N4D Istanbul + Bursa Tour",
     duration: "3N4D",
     image: tky2,
-
+    photoOptions: [tky2, tky3, tky4, tky1, tky2, tky3],
     prices: [
       { pax: "15", price: "$210" },
       { pax: "20", price: "$190" },
@@ -255,136 +237,86 @@ const toursData = [
       { pax: "30", price: "$170" },
       { pax: "35", price: "$165" },
       { pax: "40", price: "$160" },
+      { pax: "Single Supplement", price: "$95" },
     ],
-
-    singleSupp: "$95",
   },
-
   {
-  id: 21,
-  category: "Turkey",
-  title: "2N3D Istanbul + Bursa Tour",
-  duration: "2N3D",
-  image: tky1,
-
-  prices: [
-    { pax: "15", price: "$150" },
-    { pax: "20", price: "$135" },
-    { pax: "25", price: "$125" },
-    { pax: "30", price: "$120" },
-    { pax: "35", price: "$115" },
-    { pax: "40", price: "$110" },
-  ],
-
-  singleSupp: "$75",
-},
-
-{
-  id: 22,
-  category: "Turkey",
-  title: "3N4D Istanbul + Bursa Tour",
-  duration: "3N4D",
-  image: tky2,
-
-  prices: [
-    { pax: "15", price: "$210" },
-    { pax: "20", price: "$190" },
-    { pax: "25", price: "$180" },
-    { pax: "30", price: "$170" },
-    { pax: "35", price: "$165" },
-    { pax: "40", price: "$160" },
-  ],
-
-  singleSupp: "$95",
-},
-
-{
-  id: 23,
-  category: "Turkey",
-  title: "4N5D Istanbul + Bursa + Cappadocia",
-  duration: "4N5D",
-  image: tky3,
-
-  prices: [
-    { pax: "15", price: "$245" },
-    { pax: "20", price: "$215" },
-    { pax: "25", price: "$205" },
-    { pax: "30", price: "$190" },
-    { pax: "35", price: "$180" },
-    { pax: "40", price: "$175" },
-  ],
-
-  singleSupp: "$125",
-},
-
-{
-  id: 24,
-  category: "Turkey",
-  title: "5N6D Istanbul + Bursa + Cappadocia",
-  duration: "5N6D",
-  image: tky4,
-
-  prices: [
-    { pax: "15", price: "$315" },
-    { pax: "20", price: "$285" },
-    { pax: "25", price: "$260" },
-    { pax: "30", price: "$245" },
-    { pax: "35", price: "$235" },
-    { pax: "40", price: "$230" },
-  ],
-
-  singleSupp: "$145",
-},
-
-{
-  id: 25,
-  category: "Turkey",
-  title: "6N7D Istanbul + Bursa + Cappadocia + Antalya",
-  duration: "6N7D",
-  image: tky1,
-
-  prices: [
-    { pax: "15", price: "$410" },
-    { pax: "20", price: "$385" },
-    { pax: "25", price: "$360" },
-    { pax: "30", price: "$345" },
-    { pax: "35", price: "$335" },
-    { pax: "40", price: "$325" },
-  ],
-
-  singleSupp: "$175",
-},
-
-{
-  id: 26,
-  category: "Turkey",
-  title: "7N8D Turkey Full Experience",
-  duration: "7N8D",
-  image: tky2,
-
-  prices: [
-    { pax: "15", price: "$520" },
-    { pax: "20", price: "$495" },
-    { pax: "25", price: "$470" },
-    { pax: "30", price: "$455" },
-    { pax: "35", price: "$445" },
-    { pax: "40", price: "$435" },
-  ],
-
-  singleSupp: "$220",
-},
+    id: 23,
+    category: "Turki Plus",
+    title: "4N5D Istanbul + Bursa + Cappadocia",
+    duration: "4N5D",
+    image: tky3,
+    photoOptions: [tky3, tky4, tky1, tky2, tky3, tky4],
+    prices: [
+      { pax: "15", price: "$245" },
+      { pax: "20", price: "$215" },
+      { pax: "25", price: "$205" },
+      { pax: "30", price: "$190" },
+      { pax: "35", price: "$180" },
+      { pax: "40", price: "$175" },
+      { pax: "Single Supplement", price: "$125" },
+    ],
+  },
+  {
+    id: 24,
+    category: "Turki Plus",
+    title: "5N6D Istanbul + Bursa + Cappadocia",
+    duration: "5N6D",
+    image: tky4,
+    photoOptions: [tky4, tky1, tky2, tky3, tky4, tky1],
+    prices: [
+      { pax: "15", price: "$315" },
+      { pax: "20", price: "$285" },
+      { pax: "25", price: "$260" },
+      { pax: "30", price: "$245" },
+      { pax: "35", price: "$235" },
+      { pax: "40", price: "$230" },
+      { pax: "Single Supplement", price: "$145" },
+    ],
+  },
+  {
+    id: 25,
+    category: "Turki Plus",
+    title: "6N7D Istanbul + Bursa + Cappadocia + Antalya",
+    duration: "6N7D",
+    image: tky1,
+    photoOptions: [tky1, tky2, tky3, tky4, tky1, tky2],
+    prices: [
+      { pax: "15", price: "$410" },
+      { pax: "20", price: "$385" },
+      { pax: "25", price: "$360" },
+      { pax: "30", price: "$345" },
+      { pax: "35", price: "$335" },
+      { pax: "40", price: "$325" },
+      { pax: "Single Supplement", price: "$175" },
+    ],
+  },
+  {
+    id: 26,
+    category: "Turki Plus",
+    title: "7N8D Turkey Full Experience",
+    duration: "7N8D",
+    image: tky2,
+    photoOptions: [tky2, tky3, tky4, tky1, tky2, tky3],
+    prices: [
+      { pax: "15", price: "$520" },
+      { pax: "20", price: "$495" },
+      { pax: "25", price: "$470" },
+      { pax: "30", price: "$455" },
+      { pax: "35", price: "$445" },
+      { pax: "40", price: "$435" },
+      { pax: "Single Supplement", price: "$220" },
+    ],
+  },
 ];
 
 export default function Tours() {
-  const [activeCategory, setActiveCategory] =
-    useState("Semua Paket");
-
+  const [activeCategory, setActiveCategory] = useState("Semua Paket");
   const [showAll, setShowAll] = useState(false);
-
+  const [selectedPriceIndex, setSelectedPriceIndex] = useState({});
   const [lightbox, setLightbox] = useState(null);
 
   const showMoreWrapRef = useRef(null);
-
   const collapseScrollAnchorRef = useRef(null);
 
   const sectionRef = useScrollReveal({
@@ -394,13 +326,9 @@ export default function Tours() {
   const filteredTours =
     activeCategory === "Semua Paket"
       ? toursData
-      : toursData.filter(
-          (tour) =>
-            tour.category === activeCategory
-        );
+      : toursData.filter((tour) => tour.category === activeCategory);
 
-  const hasMoreTours =
-    filteredTours.length > INITIAL_VISIBLE;
+  const hasMoreTours = filteredTours.length > INITIAL_VISIBLE;
 
   const displayedTours = showAll
     ? filteredTours
@@ -408,10 +336,7 @@ export default function Tours() {
 
   const visibleCount = showAll
     ? filteredTours.length
-    : Math.min(
-        INITIAL_VISIBLE,
-        filteredTours.length
-      );
+    : Math.min(INITIAL_VISIBLE, filteredTours.length);
 
   useEffect(() => {
     setShowAll(false);
@@ -421,31 +346,19 @@ export default function Tours() {
     const onFilter = (e) => {
       const category = e.detail?.category;
 
-      if (
-        !category ||
-        !categories.includes(category)
-      )
-        return;
+      if (!category || !categories.includes(category)) return;
 
       setActiveCategory(category);
       setShowAll(false);
     };
 
-    window.addEventListener(
-      TOURS_FILTER_EVENT,
-      onFilter
-    );
+    window.addEventListener(TOURS_FILTER_EVENT, onFilter);
 
-    return () =>
-      window.removeEventListener(
-        TOURS_FILTER_EVENT,
-        onFilter
-      );
+    return () => window.removeEventListener(TOURS_FILTER_EVENT, onFilter);
   }, []);
 
   useLayoutEffect(() => {
-    const anchorTop =
-      collapseScrollAnchorRef.current;
+    const anchorTop = collapseScrollAnchorRef.current;
 
     if (anchorTop === null || showAll) return;
 
@@ -455,9 +368,7 @@ export default function Tours() {
 
     if (!wrap) return;
 
-    const delta =
-      wrap.getBoundingClientRect().top -
-      anchorTop;
+    const delta = wrap.getBoundingClientRect().top - anchorTop;
 
     if (delta !== 0) {
       window.scrollBy(0, delta);
@@ -496,17 +407,13 @@ export default function Tours() {
         </h3>
 
         <p className="tours-count" data-reveal>
-          Menampilkan{" "}
-          <strong>{visibleCount}</strong>
+          Menampilkan <strong>{visibleCount}</strong>
           {hasMoreTours && !showAll && (
             <>
-              {" "}
-              dari{" "}
-              <strong>
-                {filteredTours.length}
-              </strong>
+              {' '}
+              dari <strong>{filteredTours.length}</strong>
             </>
-          )}{" "}
+          )}{' '}
           paket
           {activeCategory !== "Semua Paket"
             ? ` · ${activeCategory}`
@@ -535,112 +442,121 @@ export default function Tours() {
       </div>
 
       <div className="tours-grid" key={activeCategory}>
-        {displayedTours.map((tour, index) => (
-          <article
-            className="tour-card"
-            key={tour.id}
-            style={{ "--card-i": index }}
-          >
-            <button
-              type="button"
-              className="tour-image-btn"
-              onClick={() =>
-                setLightbox({
-                  src: tour.image,
-                  alt: tour.title,
-                })
-              }
-              aria-label={`Perbesar brosur ${tour.title}`}
-            >
-              <div
-                className="tour-image"
-                style={{
-                  backgroundImage: `url(${tour.image})`,
-                }}
-              >
-                <div className="tour-overlay" />
+        {displayedTours.map((tour, index) => {
+          const currentPhoto =
+            tour.photoOptions?.[selectedPriceIndex[tour.id] ?? 0] ??
+            tour.image;
 
-                <span
-                  className="tour-zoom-hint"
-                  aria-hidden="true"
+          return (
+            <article
+              className="tour-card"
+              key={tour.id}
+              style={{ "--card-i": index }}
+            >
+              <button
+                type="button"
+                className="tour-image-btn"
+                onClick={() =>
+                  setLightbox({
+                    src: currentPhoto,
+                    alt: tour.title,
+                  })
+                }
+                aria-label={`Perbesar brosur ${tour.title}`}
+              >
+                <div
+                  className="tour-image"
+                  style={{
+                    backgroundImage: `url(${currentPhoto})`,
+                  }}
                 >
-                  Klik untuk lihat brosur
+                  <div className="tour-overlay" />
+
+                  <span
+                    className="tour-zoom-hint"
+                    aria-hidden="true"
+                  >
+                    Klik untuk lihat brosur
+                  </span>
+
+                  <div className="tour-badge">
+                    <span>{tour.duration}</span>
+                  </div>
+                </div>
+              </button>
+
+              <div className="tour-content">
+                <span className="tour-category-tag">
+                  {tour.category}
                 </span>
 
-                <div className="tour-badge">
-                  <span>{tour.duration}</span>
-                </div>
-              </div>
-            </button>
+                <h2>{tour.title}</h2>
 
-            <div className="tour-content">
-              <span className="tour-category-tag">
-                {tour.category}
-              </span>
-
-              <h2>{tour.title}</h2>
-
-              {/* ===== BAGIAN INI YANG DITAMBAHKAN ===== */}
-
-              {tour.prices ? (
-                <>
-                  <div className="tour-price-table">
-                    {tour.prices.map(
-                      (item, idx) => (
-                        <div
-                          className="tour-price-item"
+                {tour.prices ? (
+                  <>
+                    <div className="tour-price-table">
+                      {tour.prices.map((item, idx) => (
+                        <button
                           key={idx}
+                          type="button"
+                          className={`tour-price-item ${
+                            selectedPriceIndex[tour.id] === idx
+                              ? "active"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            setSelectedPriceIndex((prev) => ({
+                              ...prev,
+                              [tour.id]: idx,
+                            }))
+                          }
                         >
                           <span>{item.pax}</span>
 
-                          <strong>
-                            {item.price}
-                          </strong>
-                        </div>
-                      )
-                    )}
-                  </div>
+                          <strong>{item.price}</strong>
+                        </button>
+                      ))}
+                    </div>
 
-                  <div className="tour-single-supp">
-                    <span>
-                      Single Supplement
+                    
+                  </>
+                ) : (
+                  <p className="tour-meta">
+                    <span>{tour.duration}</span>
+
+                    <span
+                      className="tour-meta-sep"
+                      aria-hidden="true"
+                    >
+                      ·
                     </span>
 
-                    <strong>
-                      {tour.singleSupp}
-                    </strong>
-                  </div>
-                </>
-              ) : (
-                <p className="tour-meta">
-                  <span>{tour.duration}</span>
+                    <span className="tour-price">
+                      {formatPrice(tour.price)}
+                    </span>
+                  </p>
+                )}
 
-                  <span
-                    className="tour-meta-sep"
-                    aria-hidden="true"
-                  >
-                    ·
-                  </span>
-
-                  <span className="tour-price">
-                    {formatPrice(tour.price)}
-                  </span>
-                </p>
-              )}
-
-              {/* ====================================== */}
-
-              <button
-                type="button"
-                onClick={() =>
-                  openWhatsApp(tour.title)
-                }
-              >
-                Pesan →
-              </button>
-            </div>
-          </article>
-        ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    let message;
+                    if (tour.prices) {
+                      const selectedIdx = selectedPriceIndex[tour.id] ?? 0;
+                      const selectedPrice = tour.prices[selectedIdx];
+                      message = `Halo Mariposas Tour, saya tertarik dan ingin memesan ${tour.title} ${selectedPrice.pax} (${selectedPrice.price}). Boleh minta informasi lebih lanjut?`;
+                    } else {
+                      message = `Halo Mariposas Tour, saya tertarik dan ingin memesan ${tour.title}. Boleh minta informasi lebih lanjut?`;
+                    }
+                    openWhatsApp(message);
+                  }}
+                >
+                  Pesan →
+                </button>
+              </div>
+            </article>
+          );
+        })}
       </div>
 
       <div
@@ -660,10 +576,10 @@ export default function Tours() {
           </button>
         ) : (
           <p className="tours-all-shown-message">
-            ✨ Semua paket{" "}
+            ✨ Semua paket{' '}
             {activeCategory !== "Semua Paket"
               ? `pada kategori ${activeCategory}`
-              : ""}{" "}
+              : ""}{' '}
             sudah ditampilkan
           </p>
         )}
@@ -674,9 +590,7 @@ export default function Tours() {
           <div className="help-icon">🎧</div>
 
           <div>
-            <h2>
-              Butuh Bantuan Memilih Paket?
-            </h2>
+            <h2>Butuh Bantuan Memilih Paket?</h2>
 
             <p>
               Tim kami siap membantu Anda
