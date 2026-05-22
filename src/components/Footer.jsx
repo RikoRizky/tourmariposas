@@ -1,4 +1,9 @@
 import "./Footer.css";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { dispatchToursFilter } from "../utils/toursFilter.js";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const quickLinks = [
   { label: "About Us", href: "#about" },
@@ -8,11 +13,13 @@ const quickLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+// ✅ Daftar layanan (Our Services) – sekarang termasuk Turki Plus
 const services = [
-  "Tour Internasional",
-  "Tour Umroh",
-  "Tour turki",
-  "Tour Indonesia",
+  { label: "Tour Internasional", filter: "Semua Paket" },
+  { label: "Tour Umroh", filter: "Umroh" },
+  { label: "Tour Turki", filter: "Turkey" },
+  { label: "Tour Indonesia", filter: "Indonesia" },
+  { label: "Tour Turki Plus", filter: "Turki Plus" }, // ✨ tambahan
 ];
 
 const socialLinks = [
@@ -50,6 +57,38 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const scrollToHash = (hash) => {
+    if (!hash || hash === "#") {
+      gsap.to(window, { scrollTo: 0, duration: 1, ease: "power3.inOut" });
+      return;
+    }
+    const id = hash.replace(/^#/, "");
+    const target = document.getElementById(id);
+    if (!target) return;
+    const nav = document.querySelector(".modern-nav");
+    const navHeight = nav ? nav.offsetHeight : 96;
+    const offset = navHeight + 36;
+
+    gsap.to(window, {
+      scrollTo: { y: target, offsetY: offset, autoKill: true },
+      duration: 1.15,
+      ease: "power3.inOut",
+    });
+  };
+
+  const handleQuickLinkClick = (e, href) => {
+    e.preventDefault();
+    scrollToHash(href);
+  };
+
+  const handleServiceClick = (e, serviceFilter) => {
+    e.preventDefault();
+    if (serviceFilter) {
+      dispatchToursFilter(serviceFilter);
+    }
+    scrollToHash("#tours");
+  };
+
   return (
     <footer className="site-footer">
       <div className="footer-main">
@@ -91,7 +130,12 @@ export default function Footer() {
           <ul>
             {quickLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href}>{link.label}</a>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleQuickLinkClick(e, link.href)}
+                >
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -101,7 +145,14 @@ export default function Footer() {
           <h3>Our Services</h3>
           <ul>
             {services.map((service) => (
-              <li key={service}>{service}</li>
+              <li key={service.label}>
+                <a
+                  href="#tours"
+                  onClick={(e) => handleServiceClick(e, service.filter)}
+                >
+                  {service.label}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -118,9 +169,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-            <a href="tel:+6281315499154">+62 813-1549-9154</a>
-            <br />
-            <a href="tel:+62905513869855">+90 5513-8698-55</a>
+              <a href="tel:+6281315499154">+62 813-1549-9154</a>
+              <br />
+              <a href="tel:+62905513869855">+90 5513-8698-55</a>
             </li>
           </ul>
         </div>
