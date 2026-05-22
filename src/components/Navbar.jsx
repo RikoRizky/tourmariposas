@@ -513,7 +513,7 @@ export function Navbar({ hidden = true }) {
             className="nav-cta nav-cta-desktop"
             onClick={handleNavClick}
           >
-            Pesan Sekarang
+            Book Now
           </a>
         </div>
 
@@ -548,7 +548,7 @@ export function Navbar({ hidden = true }) {
               <li><a href="#testimoni" onClick={handleNavClick}>Testimoni</a></li>
               <li><a href="#contact" onClick={handleNavClick}>Kontak</a></li>
               <li className="nav-cta-mobile-wrapper">
-                <a href="#tours" className="nav-cta" onClick={handleNavClick}>Pesan Sekarang</a>
+                <a href="#tours" className="nav-cta" onClick={handleNavClick}>Book Now</a>
               </li>
             </ul>
           </nav>

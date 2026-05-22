@@ -1,5 +1,7 @@
 import "./Destination.css";
 
+import { dispatchToursFilter } from "../../../utils/toursFilter.js";
+
 const packages = [
   {
     id: 1,
@@ -65,7 +67,31 @@ export default function Destination() {
               <div key={`${pkg.id}-box`} className={`box ${pkg.boxClass}`}>
                 <h3>{pkg.title}</h3>
                 <p>{pkg.description}</p>
-                <a href="#contact" className="btn">
+                <a
+                  href="#tours"
+                  className="btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+
+                    const categoryMap = {
+                      "Wonderful Indonesia": "Indonesia",
+                      "Umroh Premium": "Umroh",
+                      "Spectacular Turkiye": "Turkey",
+                    };
+
+                    const category = categoryMap[pkg.title];
+                    dispatchToursFilter(category ?? "Semua Paket");
+
+                    const el = document.getElementById("tours");
+                    if (el) {
+                      el.classList.add("tours-jump-highlight");
+                      el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      window.setTimeout(() => {
+                        el.classList.remove("tours-jump-highlight");
+                      }, 900);
+                    }
+                  }}
+                >
                   Find out more
                 </a>
               </div>,

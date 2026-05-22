@@ -361,6 +361,26 @@
 
 /* TAMBAHKAN SAJA DI Tours.css */
 
+#tours.tours-jump-highlight {
+  animation: toursHighlight 900ms ease both;
+}
+
+@keyframes toursHighlight {
+  0% {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .tour-price-table{
   display:grid;
   grid-template-columns:repeat(3,1fr);
