@@ -505,7 +505,7 @@
 /* Tablet dan Mobile Lebar (max 1100px) */
 @media (max-width: 1100px) {
   .navbar-overlay-menu {
-    padding: 96px 5% 0;
+    padding: 100px 5% 0; /* Increased from 96px to prevent navbar overlap */
   }
 
   .mega-mobile-nav {
@@ -525,16 +525,9 @@
     justify-content: center;
   }
 
-  .mega-package-row {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  .mega-package-row .mega-btn-view {
-    grid-column: 1 / -1;
-    justify-self: start;
-    margin-top: 0.25rem;
-  }
+  /* REMOVED the rules that forced button below text */
+  /* .mega-package-row now keeps desktop layout: auto 1fr auto */
+  /* No grid-template-columns override needed here */
 
   .modern-nav .nav-center {
     display: none !important;
@@ -552,7 +545,7 @@
   }
 
   .navbar-overlay-menu {
-    padding: 88px 4% 0;
+    padding: 92px 4% 0; /* Increased for smaller devices */
   }
 
   .mega-heading {
@@ -560,9 +553,10 @@
     margin-bottom: 0.85rem;
   }
 
+  /* Keep button on right, adjust spacing for smaller screens */
   .mega-package-row {
-    padding: 0.7rem 0.85rem;
     gap: 0.75rem;
+    padding: 0.7rem 0.85rem;
   }
 
   .mega-package-copy strong {
@@ -571,6 +565,12 @@
 
   .mega-package-copy span {
     font-size: 0.75rem;
+  }
+
+  .mega-btn-view {
+    padding: 0.5rem 0.9rem; /* Slightly smaller but still on right */
+    font-size: 0.75rem;
+    white-space: nowrap; /* Prevents button text from wrapping */
   }
 
   .mega-destination-pill {
@@ -597,15 +597,13 @@
   }
 }
 
-/* Perangkat sangat kecil (max 480px) - TOMBOL BURGER TETAP TERLIHAT */
+/* Perangkat sangat kecil (max 480px) */
 @media (max-width: 480px) {
   .modern-nav {
     height: 68px;
     padding: 0 16px;
   }
 
-  /* Logo tidak diubah ukurannya (tetap seperti semula) */
-  /* Hanya pastikan area kanan (nav-right) tidak menyembunyikan burger */
   .modern-nav .nav-right {
     display: flex;
     align-items: center;
@@ -632,16 +630,18 @@
   }
 
   .navbar-overlay-menu {
-    padding: 80px 3% 0;
+    padding: 88px 3% 0; /* Ensures content clears navbar (height 68px) */
   }
 
   .mega-menu-grid {
     gap: 1.5rem;
   }
 
+  /* Keep grid as auto 1fr auto, adjust gap */
   .mega-package-row {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     gap: 0.6rem;
+    padding: 0.6rem 0.8rem;
   }
 
   .package-icon {
@@ -656,6 +656,15 @@
 
   .mega-btn-view {
     padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .mega-package-copy strong {
+    font-size: 0.8rem;
+  }
+
+  .mega-package-copy span {
     font-size: 0.7rem;
   }
 
@@ -686,20 +695,5 @@
   .mega-resource-list a {
     font-size: 0.85rem;
     gap: 0.5rem;
-  }
-}
-
-/* Desktop (min 1101px) */
-@media (min-width: 1101px) {
-  .modern-nav .nav-center {
-    display: flex !important;
-  }
-
-  .mega-mobile-nav {
-    display: none !important;
-  }
-
-  .nav-cta-mobile-wrapper {
-    display: none !important;
   }
 }
