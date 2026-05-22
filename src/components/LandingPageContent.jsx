@@ -3,7 +3,7 @@ import { useLayoutEffect, useRef } from "react";
 
 // 1. Import semua gambar dari folder assets kamu ke sini
 import gambarBali from "../assets/bali.jpg";
-import gambarTurki from "../assets/turki.jpg";
+import gambarTurki from "../assets/turki.jpeg";
 import gambarUmroh from "../assets/umroh.jpg";
 
 export function LandingPageContent() {
