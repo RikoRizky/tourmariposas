@@ -38,7 +38,7 @@ export function Preloader() {
                     Mariposas Tour
                   </text>
                   <text className="text-title" x="5" y="65">
-                    Indonesia
+                    INDONESIA
                   </text>
                 </g>
               </g>
