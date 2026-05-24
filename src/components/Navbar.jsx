@@ -483,7 +483,7 @@ export function Navbar({ hidden = true }) {
       >
         <div className="nav-left">
           <a href="#" className="nav-brand" onClick={handleNavClick}>
-            <img src="logobg.png" alt="Mariposas Logo" className="brand-logo" />
+            <img src="/logobg.png" alt="Mariposas Logo" className="brand-logo" />
             <div className="brand-divider" />
             <div className="brand-text">
               <h1>MARIPOSAS TOUR</h1>
