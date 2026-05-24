@@ -127,12 +127,34 @@
 .footer-col ul li a {
   color: #94a3b8;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block; /* Agar pseudo-element bisa muncul sejajar */
 }
 
-.footer-col ul li a:hover {
+/* ========== EFEK PANAH UNTUK QUICK LINKS & OUR SERVICES ========== */
+.footer-col:not(.footer-contact) ul li a:hover::before {
+  content: "> ";
+  margin-right: 4px;
+  font-weight: 600;
+  display: inline-block;
+  transition: margin-right 0.2s ease;
+}
+
+.footer-col:not(.footer-contact) ul li a:hover {
+  transform: translateX(4px);
   color: #60a5fa;
 }
+
+.footer-contact ul li a {
+  display: inline; /* Kembalikan default untuk contact link agar tidak kena panah */
+}
+
+.footer-contact ul li a:hover {
+  transform: none;
+}
+
+/* Akhir efek panah */
+/* ========================================= */
 
 .footer-contact ul li:first-child {
   max-width: 260px;
