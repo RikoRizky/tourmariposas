@@ -1,37 +1,48 @@
 .contact-section {
   width: 100%;
   min-height: 100vh;
-  padding: 120px 7%;
+  padding: 130px 7% 100px;
 }
 
 .contact-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
 }
 
 .contact-header p {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: #2563eb;
-  font-weight: 600;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
+  margin-bottom: 1.2rem;
 }
 
 .contact-header h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  color: #111;
-  line-height: 1.2;
-  font-weight: 800;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  color: #0a1628;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .contact-header h1 span {
-  color: #1e4da1;
+  color: #2563eb;
+  font-style: italic;
 }
 
 .contact-header h3 {
   margin-top: 20px;
-  color: #666;
+  color: #64748b;
   font-weight: 400;
   line-height: 1.8;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-layout {

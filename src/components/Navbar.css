@@ -36,7 +36,7 @@
 }
 
 .modern-nav .brand-divider {
-  background: linear-gradient(180deg, transparent, #93c5fd, transparent);
+  background: linear-gradient(180deg, transparent, rgba(30, 58, 138, 0.3), transparent);
 }
 
 .modern-nav .nav-center {

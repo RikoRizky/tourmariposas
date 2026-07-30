@@ -5,28 +5,28 @@ import bali from "./bali.jpg";
 import turki from "./turki.jpg";
 import umroh from "./umroh.jpg";
 
-// const stats = [
-//   {
-//     id: 1,
-//     number: "10K+",
-//     text: "Happy Travelers",
-//   },
-//   {
-//     id: 2,
-//     number: "250+",
-//     text: "Tour Packages",
-//   },
-//   {
-//     id: 3,
-//     number: "15+",
-//     text: "Years Experience",
-//   },
-//   {
-//     id: 4,
-//     number: "98%",
-//     text: "Customer Satisfaction",
-//   },
-// ];
+const stats = [
+  {
+    id: 1,
+    number: "5K+",
+    text: "Jemaah Terlayani",
+  },
+  {
+    id: 2,
+    number: "50+",
+    text: "Paket Tour",
+  },
+  {
+    id: 3,
+    number: "10+",
+    text: "Tahun Pengalaman",
+  },
+  {
+    id: 4,
+    number: "99%",
+    text: "Kepuasan Jemaah",
+  },
+];
 
 export default function About() {
   const sectionRef = useScrollReveal({ staggerStep: 80 });
@@ -106,15 +106,14 @@ export default function About() {
         </div>
       </div>
 
-      {/* <div className="about-stats">
+      <div className="about-stats">
         {stats.map((item) => (
           <div className="stat-card" key={item.id} data-reveal>
             <h2>{item.number}</h2>
-
             <p>{item.text}</p>
           </div>
         ))}
-      </div> */}
+      </div>
     </section>
   );
 }

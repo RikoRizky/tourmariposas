@@ -1,31 +1,39 @@
 .tours-section {
   width: 100%;
   min-height: 100vh;
-  padding: 120px 6%;
+  padding: 130px 7% 100px;
 }
 
 .tours-header {
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 48px;
 }
 
 .tours-header p {
-  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 1.2rem;
 }
 
 .tours-header h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
   line-height: 1.1;
-  color: #0f172a;
-  font-weight: 800;
-  margin-bottom: 20px;
+  color: #0a1628;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .tours-header h1 span {
   color: #2563eb;
+  font-style: italic;
 }
 
 .tours-header h3 {
@@ -280,17 +288,30 @@
 }
 
 .tour-help {
-  margin-top: 64px;
-  background: #ffffff;
+  margin-top: 72px;
+  background: linear-gradient(135deg, #0a1628 0%, #1e3a8a 100%);
   border-radius: 24px;
-  padding: 36px 40px;
+  padding: 44px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
-  border: 1px solid rgba(37, 99, 235, 0.1);
-  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.08);
+  box-shadow: 0 16px 48px rgba(10, 22, 40, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.tour-help::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.12);
+  pointer-events: none;
 }
 
 .help-left {
@@ -303,38 +324,44 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  background: rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tour-help h2 {
-  font-size: 1.35rem;
-  color: #0f172a;
+  font-size: 1.4rem;
+  color: #ffffff;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .tour-help p {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.7;
 }
 
 .tour-help>button {
   border: none;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
   padding: 16px 36px;
   border-radius: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  font-family: inherit;
+  font-size: 0.95rem;
 }
 
 .tour-help>button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.35);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 @media screen and (max-width: 768px) {
@@ -415,9 +442,12 @@ button.tour-price-item.active {
 
 button.tour-price-item span {
   display: block;
-  font-size: 12px;
-  color: #bf0c0c;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
   margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 button.tour-price-item strong {

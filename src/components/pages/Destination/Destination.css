@@ -114,9 +114,10 @@
 #destination h2 {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   color: white;
-  font-size: 56px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
   margin: 0;
   padding-top: 72px;
   position: relative;
@@ -127,6 +128,7 @@
   animation: revealText linear both;
   animation-timeline: view();
   animation-range: 25% 60%;
+  line-height: 1.15;
 }
 
 #destination .layout-container {
