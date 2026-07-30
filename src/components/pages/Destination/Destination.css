@@ -206,7 +206,7 @@
 }
 
 #destination .destination-scroll-bottom {
-  height: 25vh;
+  height: 20vh;
 }
 
 @media (max-width: 992px) {
