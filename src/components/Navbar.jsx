@@ -31,7 +31,7 @@ const MEGA_PACKAGES = [
   {
     title: "Paket Turki",
     desc: "Istanbul, Cappadocia & sekitarnya",
-    tourFilter: "Turkey",
+    tourFilter: "Turki",
     icon: "turkey",
   },
 ];
@@ -39,7 +39,7 @@ const MEGA_PACKAGES = [
 const MEGA_DESTINATIONS = [
   { label: "Indonesia", flag: "🇮🇩", tourFilter: "Indonesia" },
   { label: "Umroh", flag: "🇸🇦", tourFilter: "Umroh" },
-  { label: "Turki", flag: "🇹🇷", tourFilter: "Turkey" },
+  { label: "Turki", flag: "🇹🇷", tourFilter: "Turki" },
 ];
 
 const MEGA_RECENT_TOURS = [
@@ -59,7 +59,7 @@ const MEGA_RECENT_TOURS = [
     title: "Tur Hagia Sophia & Istanbul",
     desc: "Landmark bersejarah Istanbul",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=600&auto=format&fit=crop",
-    tourFilter: "Turkey",
+    tourFilter: "Turki",
   },
 ];
 

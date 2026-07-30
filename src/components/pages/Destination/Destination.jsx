@@ -76,7 +76,7 @@ export default function Destination() {
                     const categoryMap = {
                       "Wonderful Indonesia": "Indonesia",
                       "Umroh Premium": "Umroh",
-                      "Spectacular Turkiye": "Turkey",
+                      "Spectacular Turkiye": "Turki",
                     };
 
                     const category = categoryMap[pkg.title];

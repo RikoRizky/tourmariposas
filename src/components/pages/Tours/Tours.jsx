@@ -209,11 +209,12 @@ export default function Tours() {
         if (activeCategory === "Mesir") {
           return tour.title.toLowerCase().includes("mesir");
         }
-        if (activeCategory === "Turki") {
+        if (activeCategory === "Turki" || activeCategory === "Turkey") {
           return (
-            tour.title.toLowerCase().includes("turki") ||
-            tour.title.toLowerCase().includes("turkey") ||
-            tour.category === "Turki Plus"
+            (tour.title.toLowerCase().includes("turki") ||
+              tour.title.toLowerCase().includes("turkey") ||
+              tour.category === "Turki") &&
+            tour.category !== "Turki Plus"
           );
         }
         return tour.category === activeCategory;
@@ -235,7 +236,10 @@ export default function Tours() {
 
   useEffect(() => {
     const onFilter = (e) => {
-      const category = e.detail?.category;
+      let category = e.detail?.category;
+      if (category === "Turkey") {
+        category = "Turki";
+      }
 
       if (!category || !categories.includes(category)) return;
 

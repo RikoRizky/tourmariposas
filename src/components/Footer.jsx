@@ -17,7 +17,7 @@ const quickLinks = [
 const services = [
   { label: "Tour Internasional", filter: "Semua Paket" },
   { label: "Tour Umroh", filter: "Umroh" },
-  { label: "Tour Turki", filter: "Turkey" },
+  { label: "Tour Turki", filter: "Turki" },
   { label: "Tour Indonesia", filter: "Indonesia" },
   { label: "Tour Turki Plus", filter: "Turki Plus" }, // ✨ tambahan
 ];
