@@ -60,6 +60,7 @@ export function getDriveThumbnail(driveId) {
   return `https://lh3.googleusercontent.com/u/0/d/${driveId}=w600-h800-p`;
 }
 
+
 export function getDrivePreviewUrl(driveId, { autoplay = false } = {}) {
   const url = `https://drive.google.com/file/d/${driveId}/preview`;
   if (!autoplay) return url;
