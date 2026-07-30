@@ -15,6 +15,9 @@ import umrohSerasaHaji from "./umroh serasa haji.jpeg";
 const categories = [
   "Semua Paket",
   "Umroh",
+  "Season 1",
+  "Mesir",
+  "Turki",
   "Turki Plus",
 ];
 
@@ -32,6 +35,7 @@ const toursData = [
   {
     id: 1,
     category: "Umroh",
+    isSeason1: true,
     title: "Paket Umroh Barokah Season 1",
     duration: "10 Hari",
     price: 30500000,
@@ -40,6 +44,7 @@ const toursData = [
   {
     id: 2,
     category: "Umroh",
+    isSeason1: true,
     title: "Paket Umroh Plus Mesir Season 1",
     duration: "14 Hari",
     price: 36900000,
@@ -197,7 +202,22 @@ export default function Tours() {
   const filteredTours =
     activeCategory === "Semua Paket"
       ? toursData
-      : toursData.filter((tour) => tour.category === activeCategory);
+      : toursData.filter((tour) => {
+          if (activeCategory === "Season 1") {
+            return tour.isSeason1 || tour.title.toLowerCase().includes("season 1");
+          }
+          if (activeCategory === "Mesir") {
+            return tour.title.toLowerCase().includes("mesir");
+          }
+          if (activeCategory === "Turki") {
+            return (
+              tour.title.toLowerCase().includes("turki") ||
+              tour.title.toLowerCase().includes("turkey") ||
+              tour.category === "Turki Plus"
+            );
+          }
+          return tour.category === activeCategory;
+        });
 
   const hasMoreTours = filteredTours.length > INITIAL_VISIBLE;
 
