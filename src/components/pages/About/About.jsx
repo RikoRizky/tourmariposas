@@ -106,14 +106,14 @@ export default function About() {
         </div>
       </div>
 
-      <div className="about-stats">
+      {/* <div className="about-stats">
         {stats.map((item) => (
           <div className="stat-card" key={item.id} data-reveal>
             <h2>{item.number}</h2>
             <p>{item.text}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }
