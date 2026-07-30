@@ -5,33 +5,16 @@ import { openWhatsApp } from "../../../utils/whatsapp.js";
 import { TOURS_FILTER_EVENT } from "../../../utils/toursFilter.js";
 import "./Tours.css";
 
-import umh1 from "./umh1.jpeg";
-import umh2 from "./umh2.jpeg";
-import umh3 from "./umh3.jpeg";
-import umh4 from "./umh4.jpeg";
-import umh5 from "./umh5.jpeg";
-import umh6 from "./umh6.jpeg";
-import umh7 from "./umh7.jpeg";
-import umh8 from "./umh8.jpeg";
-import umh9 from "./umh9.jpeg";
-import umh10 from "./umh10.jpeg";
-import umh11 from "./umh11.jpeg";
-import umh12 from "./umh12.jpeg";
-import umh13 from "./umh13.jpeg";
-import umh14 from "./umh14.jpeg";
-import umh15 from "./umh15.jpeg";
-import umh16 from "./umh16.jpeg";
-
-import tky1 from "./tky1.jpeg";
-import tky2 from "./tky2.jpeg";
-import tky3 from "./tky3.jpeg";
-import tky4 from "./tky4.jpeg";
+import umrohBarokah from "./season1 umroh barokah.jpeg";
+import umrohPlusMesir from "./season1 umroh plus mesir.jpeg";
+import umrohItikaf from "./umroh itikaf.jpeg";
+import umrohPlusTurki from "./umroh plus turki.jpeg";
+import umrohRamadhan from "./umroh ramadhan.jpeg";
+import umrohSerasaHaji from "./umroh serasa haji.jpeg";
 
 const categories = [
   "Semua Paket",
   "Umroh",
-  "Indonesia",
-  "Turkey",
   "Turki Plus",
 ];
 
@@ -49,170 +32,58 @@ const toursData = [
   {
     id: 1,
     category: "Umroh",
-    title: "Paket Umroh Arbain Juli 2026",
-    duration: "15 Hari",
-    price: 38500000,
-    image: umh1,
+    title: "Paket Umroh Barokah Season 1",
+    duration: "10 Hari",
+    price: 30500000,
+    image: umrohBarokah,
   },
   {
     id: 2,
     category: "Umroh",
-    title: "Paket Umroh Arbain Syawal 2026",
-    duration: "18 Hari",
-    price: 42500000,
-    image: umh2,
+    title: "Paket Umroh Plus Mesir Season 1",
+    duration: "14 Hari",
+    price: 36900000,
+    image: umrohPlusMesir,
   },
   {
     id: 3,
     category: "Umroh",
-    title: "Paket Umroh Promo Special 2026",
-    duration: "27 Hari",
-    price: 52000000,
-    image: umh3,
+    title: "Paket Umroh Itikaf",
+    duration: "15 Hari",
+    price: 42900000,
+    image: umrohItikaf,
   },
   {
     id: 4,
     category: "Umroh",
-    title: "Paket Umroh PBI 2026",
-    duration: "9 - 12 Hari",
-    price: 29800000,
-    image: umh4,
+    title: "Paket Umroh Plus Turki",
+    duration: "13 Hari",
+    price: 37500000,
+    image: umrohPlusTurki,
   },
   {
     id: 5,
     category: "Umroh",
-    title: "Umroh Exclusive Premium",
-    duration: "12 Hari",
-    price: 36500000,
-    image: umh5,
+    title: "Paket Umroh Ramadhan Special",
+    duration: "20 Hari",
+    price: 39900000,
+    image: umrohRamadhan,
   },
   {
     id: 6,
     category: "Umroh",
-    title: "Umroh Reguler Hemat",
-    duration: "10 Hari",
-    price: 27500000,
-    image: umh6,
+    title: "Paket Umroh Serasa Haji",
+    duration: "33 Hari",
+    price: 40900000,
+    image: umrohSerasaHaji,
   },
   {
     id: 7,
-    category: "Umroh",
-    title: "Umroh Private VIP",
-    duration: "8 Hari",
-    price: 45800000,
-    image: umh7,
-  },
-  {
-    id: 8,
-    category: "Umroh",
-    title: "Paket Umroh Sederhana",
-    duration: "20 Hari",
-    price: 33500000,
-    image: umh8,
-  },
-  {
-    id: 9,
-    category: "Umroh",
-    title: "Umroh Plus Turki",
-    duration: "14 Hari",
-    price: 48900000,
-    image: umh9,
-  },
-  {
-    id: 10,
-    category: "Umroh",
-    title: "Umroh Plus Dubai",
-    duration: "13 Hari",
-    price: 41200000,
-    image: umh10,
-  },
-  {
-    id: 11,
-    category: "Umroh",
-    title: "Umroh Ramadhan Special",
-    duration: "16 Hari",
-    price: 44500000,
-    image: umh11,
-  },
-  {
-    id: 12,
-    category: "Umroh",
-    title: "Umroh Akhir Tahun",
-    duration: "11 Hari",
-    price: 31800000,
-    image: umh12,
-  },
-  {
-    id: 13,
-    category: "Umroh",
-    title: "Umroh Plus Aqsa",
-    duration: "15 Hari",
-    price: 46800000,
-    image: umh13,
-  },
-  {
-    id: 14,
-    category: "Umroh",
-    title: "Umroh VIP Executive",
-    duration: "9 Hari",
-    price: 39500000,
-    image: umh14,
-  },
-  {
-    id: 15,
-    category: "Umroh",
-    title: "Umroh Family Package",
-    duration: "12 Hari",
-    price: 35200000,
-    image: umh15,
-  },
-  {
-    id: 16,
-    category: "Umroh",
-    title: "Umroh Premium Plus",
-    duration: "14 Hari",
-    price: 37800000,
-    image: umh16,
-  },
-  {
-    id: 17,
-    category: "Turkey",
-    title: "Paket Turki Eksklusif",
-    duration: "14 Hari",
-    price: 42900000,
-    image: tky1,
-  },
-  {
-    id: 18,
-    category: "Turkey",
-    title: "Turki Muslim Friendly",
-    duration: "14 Hari",
-    price: 42900000,
-    image: tky2,
-  },
-  {
-    id: 19,
-    category: "Turkey",
-    title: "Turki Bosphorus Tour",
-    duration: "14 Hari",
-    price: 42900000,
-    image: tky3,
-  },
-  {
-    id: 20,
-    category: "Turkey",
-    title: "Turki Cappadocia",
-    duration: "14 Hari",
-    price: 42900000,
-    image: tky4,
-  },
-  {
-    id: 21,
     category: "Turki Plus",
     title: "2N3D Istanbul + Bursa Tour",
     duration: "2N3D",
-    image: tky1,
-    photoOptions: [tky1, tky2, tky3, tky4, tky1, tky2],
+    image: umrohPlusTurki,
+    photoOptions: [umrohPlusTurki, umrohPlusMesir, umrohItikaf, umrohRamadhan, umrohBarokah, umrohSerasaHaji],
     prices: [
       { pax: "15", price: "$150" },
       { pax: "20", price: "$135" },
@@ -224,12 +95,12 @@ const toursData = [
     ],
   },
   {
-    id: 22,
+    id: 8,
     category: "Turki Plus",
     title: "3N4D Istanbul + Bursa Tour",
     duration: "3N4D",
-    image: tky2,
-    photoOptions: [tky2, tky3, tky4, tky1, tky2, tky3],
+    image: umrohPlusTurki,
+    photoOptions: [umrohPlusTurki, umrohPlusMesir, umrohItikaf, umrohRamadhan, umrohBarokah, umrohSerasaHaji],
     prices: [
       { pax: "15", price: "$210" },
       { pax: "20", price: "$190" },
@@ -241,12 +112,12 @@ const toursData = [
     ],
   },
   {
-    id: 23,
+    id: 9,
     category: "Turki Plus",
     title: "4N5D Istanbul + Bursa + Cappadocia",
     duration: "4N5D",
-    image: tky3,
-    photoOptions: [tky3, tky4, tky1, tky2, tky3, tky4],
+    image: umrohPlusTurki,
+    photoOptions: [umrohPlusTurki, umrohPlusMesir, umrohItikaf, umrohRamadhan, umrohBarokah, umrohSerasaHaji],
     prices: [
       { pax: "15", price: "$245" },
       { pax: "20", price: "$215" },
@@ -258,12 +129,12 @@ const toursData = [
     ],
   },
   {
-    id: 24,
+    id: 10,
     category: "Turki Plus",
     title: "5N6D Istanbul + Bursa + Cappadocia",
     duration: "5N6D",
-    image: tky4,
-    photoOptions: [tky4, tky1, tky2, tky3, tky4, tky1],
+    image: umrohPlusTurki,
+    photoOptions: [umrohPlusTurki, umrohPlusMesir, umrohItikaf, umrohRamadhan, umrohBarokah, umrohSerasaHaji],
     prices: [
       { pax: "15", price: "$315" },
       { pax: "20", price: "$285" },
@@ -275,12 +146,12 @@ const toursData = [
     ],
   },
   {
-    id: 25,
+    id: 11,
     category: "Turki Plus",
     title: "6N7D Istanbul + Bursa + Cappadocia + Antalya",
     duration: "6N7D",
-    image: tky1,
-    photoOptions: [tky1, tky2, tky3, tky4, tky1, tky2],
+    image: umrohPlusTurki,
+    photoOptions: [umrohPlusTurki, umrohPlusMesir, umrohItikaf, umrohRamadhan, umrohBarokah, umrohSerasaHaji],
     prices: [
       { pax: "15", price: "$410" },
       { pax: "20", price: "$385" },
@@ -292,12 +163,12 @@ const toursData = [
     ],
   },
   {
-    id: 26,
+    id: 12,
     category: "Turki Plus",
     title: "7N8D Turkey Full Experience",
     duration: "7N8D",
-    image: tky2,
-    photoOptions: [tky2, tky3, tky4, tky1, tky2, tky3],
+    image: umrohPlusTurki,
+    photoOptions: [umrohPlusTurki, umrohPlusMesir, umrohItikaf, umrohRamadhan, umrohBarokah, umrohSerasaHaji],
     prices: [
       { pax: "15", price: "$520" },
       { pax: "20", price: "$495" },
