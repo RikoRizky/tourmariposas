@@ -203,21 +203,21 @@ export default function Tours() {
     activeCategory === "Semua Paket"
       ? toursData
       : toursData.filter((tour) => {
-          if (activeCategory === "Season 1") {
-            return tour.isSeason1 || tour.title.toLowerCase().includes("season 1");
-          }
-          if (activeCategory === "Mesir") {
-            return tour.title.toLowerCase().includes("mesir");
-          }
-          if (activeCategory === "Turki") {
-            return (
-              tour.title.toLowerCase().includes("turki") ||
-              tour.title.toLowerCase().includes("turkey") ||
-              tour.category === "Turki Plus"
-            );
-          }
-          return tour.category === activeCategory;
-        });
+        if (activeCategory === "Season 1") {
+          return tour.isSeason1 || tour.title.toLowerCase().includes("season 1");
+        }
+        if (activeCategory === "Mesir") {
+          return tour.title.toLowerCase().includes("mesir");
+        }
+        if (activeCategory === "Turki") {
+          return (
+            tour.title.toLowerCase().includes("turki") ||
+            tour.title.toLowerCase().includes("turkey") ||
+            tour.category === "Turki Plus"
+          );
+        }
+        return tour.category === activeCategory;
+      });
 
   const hasMoreTours = filteredTours.length > INITIAL_VISIBLE;
 
@@ -390,11 +390,10 @@ export default function Tours() {
                         <button
                           key={idx}
                           type="button"
-                          className={`tour-price-item ${
-                            selectedPriceIndex[tour.id] === idx
+                          className={`tour-price-item ${selectedPriceIndex[tour.id] === idx
                               ? "active"
                               : ""
-                          }`}
+                            }`}
                           onClick={() =>
                             setSelectedPriceIndex((prev) => ({
                               ...prev,
@@ -409,7 +408,7 @@ export default function Tours() {
                       ))}
                     </div>
 
-                    
+
                   </>
                 ) : (
                   <p className="tour-meta">
