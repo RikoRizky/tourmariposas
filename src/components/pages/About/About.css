@@ -2,7 +2,6 @@
 
 .about-section {
   width: 100%;
-  min-height: 100vh;
   padding: 130px 7% 100px;
   background: linear-gradient(160deg, #f0f6ff 0%, #fafbff 55%, #fff8f0 100%);
 }
