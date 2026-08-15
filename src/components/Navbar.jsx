@@ -4,6 +4,10 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { dispatchToursFilter } from "../utils/toursFilter.js";
 import "./Navbar.css";
 
+import umrohBarokah from "./pages/Tours/season1 umroh barokah.jpeg";
+import umrohPlusMesir from "./pages/Tours/season1 umroh plus mesir.jpeg";
+import umrohPlusTurki from "./pages/Tours/umroh plus turki.jpeg";
+
 gsap.registerPlugin(ScrollToPlugin);
 
 const MENU_DURATION = 0.75;
@@ -44,21 +48,21 @@ const MEGA_DESTINATIONS = [
 
 const MEGA_RECENT_TOURS = [
   {
-    title: "Tur Candi Borobudur",
-    desc: "Yogyakarta, Jawa Tengah",
-    image: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?q=80&w=600&auto=format&fit=crop",
-    tourFilter: "Indonesia",
+    title: "Paket Umroh Barokah Season 1",
+    desc: "10 Hari",
+    image: umrohBarokah,
+    tourFilter: "Season 1",
   },
   {
-    title: "Paket Umroh Premium",
-    desc: "12 hari di Makkah & Madinah",
-    image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=600&auto=format&fit=crop",
-    tourFilter: "Umroh",
+    title: "Paket Umroh Plus Mesir Season 1",
+    desc: "14 Hari",
+    image: umrohPlusMesir,
+    tourFilter: "Mesir",
   },
   {
-    title: "Tur Hagia Sophia & Istanbul",
-    desc: "Landmark bersejarah Istanbul",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=600&auto=format&fit=crop",
+    title: "Paket Umroh Plus Turki",
+    desc: "13 Hari",
+    image: umrohPlusTurki,
     tourFilter: "Turki",
   },
 ];

@@ -110,11 +110,11 @@
 .testimoni-logo {
   width: 8rem;
   height: 8rem;
-  background: var(--kaaba);
+  background: #ffffff;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 2px solid var(--gold-400);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;

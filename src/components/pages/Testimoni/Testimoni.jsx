@@ -9,7 +9,7 @@ import {
 } from "./testimoniVideos.js";
 import "./Testimoni.css";
 
-const logoUmh = `${import.meta.env.BASE_URL}LOGOUMH.PNG`;
+const logo = `${import.meta.env.BASE_URL}logo.jpeg`;
 
 const INITIAL_VISIBLE = 6;
 
@@ -198,7 +198,7 @@ export default function Testimoni() {
         <header className="testimoni-header" data-reveal>
           <div className="testimoni-logo-wrap">
             <div className="testimoni-logo">
-              <img src={logoUmh} alt="Logo Utama Mulya Haramain" />
+              <img src={logo} alt="Logo Mariposas" />
             </div>
           </div>
 
@@ -206,7 +206,7 @@ export default function Testimoni() {
 
           <h2>
             Kisah Haru & Bahagia
-            <span>Jemaah Umroh UMH</span>
+            <span>Jemaah Umroh Mariposas</span>
           </h2>
 
           <div className="testimoni-divider" aria-hidden="true" />
