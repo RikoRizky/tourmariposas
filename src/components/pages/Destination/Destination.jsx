@@ -9,7 +9,7 @@ const packages = [
     description:
       "Jelajahi keindahan tanah air mulai dari eksotisme Bali, keajaiban bawah laut Raja Ampat, hingga kemegahan budaya Nusantara. Temukan petualangan tak terlupakan di destinasi terbaik domestik bersama kami.",
     image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?fm=webp&fit=crop&w=450&q=75",
     imageAlt: "Indonesia Destination",
     boxClass: "box-1",
     imageClass: "image-1",
@@ -20,7 +20,7 @@ const packages = [
     description:
       "Wujudkan perjalanan ibadah yang khusyuk dan nyaman ke Tanah Suci. Nikmati fasilitas hotel terbaik yang dekat dengan Masjidil Haram dan Masjid Nabawi, didampingi oleh pembimbing ibadah yang berpengalaman.",
     image:
-      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?fm=webp&fit=crop&w=450&q=75",
     imageAlt: "Umroh Makkah Destination",
     boxClass: "box-2",
     imageClass: "image-2",
@@ -31,7 +31,7 @@ const packages = [
     description:
       "Rasakan perpaduan menakjubkan antara sejarah Asia dan Eropa. Mulai dari keindahan bangunan kuno Hagia Sophia di Istanbul hingga sensasi terbang dengan balon udara di atas tebing-tebing indah Cappadocia.",
     image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?fm=webp&fit=crop&w=450&q=75",
     imageAlt: "Turkiye Cappadocia Destination",
     boxClass: "box-3",
     imageClass: "image-3",

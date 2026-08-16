@@ -198,7 +198,7 @@ export default function Testimoni() {
         <header className="testimoni-header" data-reveal>
           <div className="testimoni-logo-wrap">
             <div className="testimoni-logo">
-              <img src={logo} alt="Logo Mariposas" />
+              <img src={logo} alt="Logo Mariposas" width="80" height="80" />
             </div>
           </div>
 

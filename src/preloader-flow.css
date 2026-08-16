@@ -157,6 +157,8 @@ section.overlay-menu {
   overflow: hidden;
   visibility: hidden;
   z-index: 9998;
+  contain: strict;
+  isolation: isolate;
 }
 .flow-images {
   position: absolute;
@@ -166,6 +168,7 @@ section.overlay-menu {
   height: 100%;
   transform-style: preserve-3d;
   perspective: 2000px;
+  contain: layout;
 }
 .flow .img {
   position: absolute;
