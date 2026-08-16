@@ -95,9 +95,11 @@ export default function Footer() {
         <div className="footer-col footer-brand">
           <a href="#" className="footer-nav-brand">
             <img
-              src="logobg.png"
+              src="logobg-sm.webp"
               alt="Mariposas Tour"
               className="footer-brand-logo"
+              width="120"
+              height="110"
             />
             <span className="footer-brand-divider" aria-hidden="true" />
             <span className="footer-brand-text">
