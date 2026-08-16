@@ -1,8 +1,8 @@
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
-import gambarBali from "../assets/bali.jpg";
-import gambarTurki from "../assets/turki.jpeg";
-import gambarUmroh from "../assets/umroh.jpg";
+import gambarBali from "../assets/bali.webp";
+import gambarTurki from "../assets/turki.webp";
+import gambarUmroh from "../assets/umroh.webp";
 
 export function LandingPageContent() {
   const landingRef = useRef(null);

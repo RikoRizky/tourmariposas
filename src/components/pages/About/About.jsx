@@ -1,9 +1,9 @@
 import { useScrollReveal } from "../../../hooks/useScrollReveal.js";
 import "./About.css";
 
-import bali from "./bali.jpg";
-import turki from "./turki.jpg";
-import umroh from "./umroh.jpg";
+import bali from "./bali.webp";
+import turki from "./turki.webp";
+import umroh from "./umroh.webp";
 
 const stats = [
   {
@@ -92,15 +92,15 @@ export default function About() {
         <div className="about-right" data-reveal>
           <div className="about-image-grid">
             <div className="image-large">
-              <img src={umroh} alt="Umroh Tour" />
+              <img src={umroh} alt="Umroh Tour" loading="lazy" width="1013" height="1800" />
             </div>
 
             <div className="image-small">
-              <img src={turki} alt="Turki Tour" />
+              <img src={turki} alt="Turki Tour" loading="lazy" width="750" height="1125" />
             </div>
 
             <div className="image-small">
-              <img src={bali} alt="Bali Tour" />
+              <img src={bali} alt="Bali Tour" loading="lazy" width="736" height="1051" />
             </div>
           </div>
         </div>

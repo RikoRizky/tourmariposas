@@ -4,9 +4,9 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { dispatchToursFilter } from "../utils/toursFilter.js";
 import "./Navbar.css";
 
-import umrohBarokah from "./pages/Tours/season1 umroh barokah.jpeg";
-import umrohPlusMesir from "./pages/Tours/season1 umroh plus mesir.jpeg";
-import umrohPlusTurki from "./pages/Tours/umroh plus turki.jpeg";
+import umrohBarokah from "./pages/Tours/season1 umroh barokah.webp";
+import umrohPlusMesir from "./pages/Tours/season1 umroh plus mesir.webp";
+import umrohPlusTurki from "./pages/Tours/umroh plus turki.webp";
 
 gsap.registerPlugin(ScrollToPlugin);
 

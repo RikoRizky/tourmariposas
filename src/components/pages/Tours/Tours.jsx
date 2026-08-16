@@ -5,12 +5,12 @@ import { openWhatsApp } from "../../../utils/whatsapp.js";
 import { TOURS_FILTER_EVENT } from "../../../utils/toursFilter.js";
 import "./Tours.css";
 
-import umrohBarokah from "./season1 umroh barokah.jpeg";
-import umrohPlusMesir from "./season1 umroh plus mesir.jpeg";
-import umrohItikaf from "./umroh itikaf.jpeg";
-import umrohPlusTurki from "./umroh plus turki.jpeg";
-import umrohRamadhan from "./umroh ramadhan.jpeg";
-import umrohSerasaHaji from "./umroh serasa haji.jpeg";
+import umrohBarokah from "./season1 umroh barokah.webp";
+import umrohPlusMesir from "./season1 umroh plus mesir.webp";
+import umrohItikaf from "./umroh itikaf.webp";
+import umrohPlusTurki from "./umroh plus turki.webp";
+import umrohRamadhan from "./umroh ramadhan.webp";
+import umrohSerasaHaji from "./umroh serasa haji.webp";
 
 const categories = [
   "Semua Paket",

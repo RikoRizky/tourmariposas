@@ -8,4 +8,16 @@ const isGitHubPages = process.env.GITHUB_PAGES === "true";
 export default defineConfig({
   plugins: [react()],
   base: isGitHubPages ? "/tourmariposas/" : "/",
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom"],
+          "gsap": ["gsap"],
+          "lucide": ["lucide-react"],
+        },
+      },
+    },
+  },
 });
