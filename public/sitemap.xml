@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <!-- Homepage (Landing) -->
   <url>
     <loc>https://mariposasindonesia.com/</loc>
-    <lastmod>2026-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mariposasindonesia.com/logobg.webp</image:loc>
+      <image:title>Mariposas Tour Indonesia — Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?fm=webp&fit=crop&w=1280&q=80</image:loc>
+      <image:title>Masjidil Haram — Umroh Premium Mariposas Tour</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?fm=webp&fit=crop&w=1280&q=80</image:loc>
+      <image:title>Hagia Sophia Istanbul — Spectacular Turkiye Mariposas Tour</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1537996194471-e657df975ab4?fm=webp&fit=crop&w=1280&q=80</image:loc>
+      <image:title>Bali Indonesia — Wonderful Indonesia Mariposas Tour</image:title>
+    </image:image>
+  </url>
+
+  <!-- Section: About -->
+  <url>
+    <loc>https://mariposasindonesia.com/#about</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Section: Destination -->
+  <url>
+    <loc>https://mariposasindonesia.com/#destination</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1537996194471-e657df975ab4?fm=webp&fit=crop&w=450&q=75</image:loc>
+      <image:title>Wonderful Indonesia — Destinasi Wisata Mariposas Tour</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?fm=webp&fit=crop&w=450&q=75</image:loc>
+      <image:title>Umroh Premium ke Makkah — Mariposas Tour Indonesia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?fm=webp&fit=crop&w=450&q=75</image:loc>
+      <image:title>Spectacular Turkiye Cappadocia — Mariposas Tour Indonesia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Section: Tours / Paket Umroh -->
+  <url>
+    <loc>https://mariposasindonesia.com/#tours</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mariposasindonesia.com/assets/season1%20umroh%20barokah-BtQM7-q_.webp</image:loc>
+      <image:title>Paket Umroh Barokah Season 1 — Mariposas Tour Indonesia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mariposasindonesia.com/assets/season1%20umroh%20plus%20mesir-BhhJqxSM.webp</image:loc>
+      <image:title>Paket Umroh Plus Mesir Season 1 — Mariposas Tour Indonesia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mariposasindonesia.com/assets/umroh%20plus%20turki-D4qF9DUr.webp</image:loc>
+      <image:title>Paket Umroh Plus Turki — Mariposas Tour Indonesia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Section: Testimoni -->
+  <url>
+    <loc>https://mariposasindonesia.com/#testimoni</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Section: Contact -->
+  <url>
+    <loc>https://mariposasindonesia.com/#contact</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
