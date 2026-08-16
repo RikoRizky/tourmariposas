@@ -15,7 +15,7 @@ export function Preloader() {
           <g className="animated-content">
             <image
               /* Menggabungkan base path dengan nama file logo */
-              href={`${baseUrl}logobg.webp`}
+              href={`${baseUrl}logobg.png`}
               x="520"
               y="340"
               width="450"
